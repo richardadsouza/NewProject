@@ -1,0 +1,82 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true"
+    CodeBehind="Shop.aspx.cs" Inherits="valetgroceryfinal.Shop" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+      <script type="text/javascript">
+
+          var Image2 = document.getElementById("Image2");
+          var Image3 = document.getElementById("Image3");
+          var Image4 = document.getElementById("Image4");
+          var Image5 = document.getElementById("Image5");
+          var Image6 = document.getElementById("Image6");
+
+          //alert(img1);
+          Image2.src = "images/tab1.png";
+          Image3.src = "images/tab2.png";
+          Image4.src = "images/tab3-h.png";
+          Image5.src = "images/tab4.png";
+          Image6.src = "images/tab5.png";
+  
+    </script>
+
+    <asp:ScriptManager ID="script1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="updatePnl1" runat="server">
+        <ContentTemplate>
+            <table border="0" cellpadding="0" cellspacing="0" width="830">
+          
+          <tr><td height="10px;"></td></tr>
+                <tr>
+                    <td>
+                        <asp:Panel ID="pnlDeliveryInfo" runat="server">
+                            <span class="formTextUSer" style="padding-top: 2px; padding-left: 45px;"><strong>Next
+                                delivery dates are: </strong>
+                                <asp:Label ID="lblDeliveryDate1" runat="server" CssClass="ErrorTxt1" Text=""></asp:Label>
+                                &nbsp;&nbsp;&nbsp;<asp:Label ID="lbland" runat="server" Text="and" CssClass="formTextUSer"></asp:Label>
+                                <asp:Label ID="lblDeliveryDate2" runat="server" CssClass="ErrorTxt1" Text=""></asp:Label></span>
+                            <br />
+                            <hr size="-1" color="#fcd500">
+                        </asp:Panel>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="2px">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <span class="formHeading"><strong>Choose an Aisle</strong></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="2px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:DataList ID="dtlAislesDetail" runat="server" RepeatDirection="Vertical" RepeatColumns="6">
+                            <ItemTemplate>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href='shelf.aspx?aisle=<%# Eval("aisletop_id") %>'>
+                                                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%#Thumbnail(DataBinder.Eval(Container.DataItem,"aisletop_image").ToString()) %>'
+                                                    Width="84" Height="78" Border="0" />
+                                            </a>
+                                        </td>
+                                        <td width="10px">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </td>
+                </tr>
+            </table>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

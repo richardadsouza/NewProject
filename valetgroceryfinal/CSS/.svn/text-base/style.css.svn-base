@@ -1,0 +1,199 @@
+@charset "utf-8";
+.table,.td,.tr
+{
+    border:0px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.normal_text {
+	font-family: Arial;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.button
+{
+font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #008D00;
+	text-align: center;
+	padding-left: 15px;
+	border: 1px solid #fcd500;
+	display: block;
+	width: auto;
+	margin-right: 5px;
+	float: left;
+	padding-right: 15px;
+	height: 32px;	
+	text-decoration: none;	
+}
+
+
+a.Link2 {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+
+a.Link2:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}.NormalRedTExt {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #ff0000;
+	text-decoration: none;
+	line-height: normal;
+}
+
+.DropDown {
+	font-family: Arial;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	height: 22px;
+	width: 178px;
+	border: 1px solid #999999;
+	margin: 0px;
+	padding: 2px;
+}
+
+.normal_text2 {
+	font-family: Arial;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a.underline {
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a.underline:hover{
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.normal_text3 {
+	font-family: Arial;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.YelloHedign {
+	font-family: Arial;
+	font-size: 24px;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+.Border {
+	background-color: #fea500;
+	border: 1px solid #CC0000;
+	border-style:none;
+}
+
+a.footer_link {
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+
+a.footer_link:hover{
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+
+.footer_text {
+	font-family: Arial;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+a.footer_link2 {
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+
+a.footer_link2:hover{
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}.headingwhite {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+.dollarbox1 {
+	font-family: Tahoma;
+	font-size: 18px;
+	font-weight: bold;
+	color: #222222;
+	text-decoration: none;
+}
+.dollarboxlink {
+	font-family: Tahoma;
+	font-weight: bold;
+	color: #222222;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.goBtnCss
+{
+background-image: url(../images/go.gif);
+background-repeat: repeat-x;
+width:23px;
+height:23px;
+background-color:Transparent;
+border:0px;
+}
+

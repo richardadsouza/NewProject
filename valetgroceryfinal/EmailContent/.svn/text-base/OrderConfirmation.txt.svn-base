@@ -1,0 +1,72 @@
+﻿<html  >
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+    .formTextSmallPrintUser {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #040404;
+	
+}
+
+
+
+ </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+      Congratulations!You have just placed an order with&nbsp;$CmpName$. The details of
+        your order are provided below. We want to thank you for choosing&nbsp;$CmpName$
+        , we will do our very best to provide exceptional service at all times.
+        <br />
+        <br />
+        Order Number: $ordNm$
+        <br />
+        Order Date & Time: $ordDate$
+        <br />
+        Delivery Date & Time: $DelivDate$
+        <br />
+        Payment method: $PaymentMethod$
+        <br />
+        Customer Name: $Fname$ $Lname$
+        <br />
+        Delivery Address: $Add1$ $Add2$
+        <br />
+        City, State Zip: $City$ , $State$ &nbsp; $Zip$
+        <br />
+        <br />
+        Order Details :
+        <br />
+        $orderDetails$
+        <br />
+        <br />
+        Sub Total($): $Subtotal$
+        <br />
+        Tax(3%)($):$Tax$
+        <br />
+        Tax(9%)($):$Tax1$
+        <br />
+        Soda Deposit($): $Soda$
+        <br />
+        Delivery Fee($): $Fee$
+        <br />
+        Tip($): $Tip$
+        <br />
+        ORDER TOTAL($): $Total$
+        <br />
+        <br />
+        Be sure to be at your delivery address during the time you chose. There is a fee
+        charged to your account if you are not present.
+        <br />
+        Thank you again for choosing &nbsp;$CmpName$,
+        <br />
+        Respectfully,
+        <br />
+        The&nbsp;$CmpName$&nbsp;Team
+           
+    </div>
+    </form>
+</body>
+</html>

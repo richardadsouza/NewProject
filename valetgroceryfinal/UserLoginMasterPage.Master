@@ -1,0 +1,160 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserLoginMasterPage.master.cs"
+    Inherits="groceryguys.UserLoginMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Grocery Guys</title>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="CSS/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="CSS/bootstrap-select.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css" />
+    <script type="text/javascript" src="js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">   
+    <style type="text/css">
+        body {
+            background-image: url(images/MainBg.JPG);
+            background-repeat: repeat-x;
+            background-color: #f1f6f0;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+    <link href="CSS/UpdateProgressIE6.css" rel="stylesheet" type="text/css" />    
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />       
+    <script type="text/javascript">
+        $(function () {
+            $("#divCart").click(function () {
+                window.location = "product_order.aspx";
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body topmargin="0" leftmargin="0" onload="MM_preloadImages('images/Home.png','images/How_It_Works.png','images/Shop.png','images/My_Account.png','images/View_Cart.png','images/Refer_a_friend.jpg','images/Pre_Made_List.jpg','images/FAQs.jpg','images/My_Shopping_List.jpg','images/Shopping_Funds.jpg')"
+    bgcolor="background-color: #f1f6f0" marginheight="0" marginwidth="0">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="logo">
+                                <a href="index.aspx">
+                                    <img src="images/logo.png" alt="Logo" /></a>
+                            </div>
+                        </div>
+                        <div id="Div1" runat="server" class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="cart" id="divCart" style="cursor: pointer;">CART:
+                                        <asp:Label runat="server" ID="lblCart"></asp:Label></div>
+                                </div>
+                                <asp:Panel ID="pnlSignUp" runat="server">
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">New Customer?<a href="Registration.aspx"><img src="images/signup-btn.png" alt="Login" /></a></div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">Current Customer?<a href="LoginPage.aspx"><img src="images/login-btn.png" alt="Login" /></a></div>
+                                    </div>
+                                </asp:Panel>
+                                <asp:Panel runat="server" ID="pnlLogIn">
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">&nbsp;</div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">
+                                            Welcome
+                                <asp:Label runat="server" ID="lblUserName"></asp:Label><a href="UserLogOut.aspx"><img src="images/logout-btn.png" alt="Login" /></a>
+                                        </div>
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu_background">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="topLinks nav navbar-nav">
+                                    <li class="selected"><a href="Index.aspx">Home</a></li>
+                                    <li><a href="Aboutcompany.aspx">About Us</a></li>
+                                    <li><a href="How.aspx">How It Works</a></li>
+                                    <li><a href="faqs.aspx">FAQs</a></li>
+                                    <li><a href="Shop.aspx">Shop Now</a></li>
+                                    <li><a href="ContactUsPage.aspx">Contact Us</a></li>
+                                    <li><a href="My_Account.aspx">My Account</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="">
+                                    <img src="images/fb-icon.png" alt="" /></a>
+                                <a href="">
+                                    <img src="images/twitter-icon.png" alt="" /></a>
+                                <a href="">
+                                    <img src="images/linkedin-icon.png" alt="" /></a>
+                                <a href="">
+                                    <img src="images/gplus-icon.png" alt="" /></a>
+                                <div style="margin-top: 7px;">                                    
+                                    <asp:ImageButton runat="server" ID="btnGo" AlternateText="Search" ImageUrl="images/search-btn.png" OnClick="btnGo_Click" />
+                                    <input type="text" name="search" runat="server" id="txtSearch" placeholder="Enter search here..." />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+                <div class="container footer">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <a href="Index.aspx">Home<div class="col-sm-12">
+                                <div class="headers_btn_text">New Customer?<a href="Registration.aspx"><img src="images/signup-btn.png" alt="Login" /></a></div>
+                            </div>
+                                <div class="col-sm-12">
+                                    <div class="headers_btn_text">Current Customer?<a href="LoginPage.aspx"><img src="images/login-btn.png" alt="Login" /></a></div>
+                                </div>
+                                <a href="Index.aspx">Home</a>
+                                <a href="Aboutcompany.aspx">About Us</a>
+                                <a href="How.aspx">How It Works</a>
+                                <a href="Shop.aspx">Shop Now</a>
+                                <a href="Testimonials.aspx">Testimonials</a>
+                                <a href="ContactUsPage.aspx">Contact Us</a>
+                                <br />
+                                Use of Grocery Guys and this Web site constitutes acceptance of our Terms of Use and Privacy Policy.<br />&copy; Copyright 2015 Grocery Guys, All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </form>
+</body>
+</html>

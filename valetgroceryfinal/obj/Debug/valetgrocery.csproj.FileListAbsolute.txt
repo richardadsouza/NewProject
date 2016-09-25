@@ -1,0 +1,10 @@
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\valetgrocery.dll
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\valetgrocery.pdb
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\AjaxControlToolkit.dll
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\FredCK.FCKeditorV2.dll
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\webresponce.dll
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\webresponce.pdb
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\bin\webresponce.xml
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\obj\Debug\valetgrocery.dll
+C:\Users\maxnet101\Desktop\21Dec2012\valetgrocery\valetgrocery\obj\Debug\valetgrocery.pdb

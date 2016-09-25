@@ -1,0 +1,300 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/UserLoginMasterPage.Master" AutoEventWireup="true"
+    CodeBehind="index.aspx.cs" Inherits="valetgroceryfinal.index" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 19px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ 
+    <asp:ScriptManager ID="script2" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="update2" runat="server">
+        <ContentTemplate>
+           
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+
+        <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td align="left" valign="top"><img src="images/left.jpg" height="253" width="14"></td>
+            <td style="background-repeat:repeat-x;" background="images/middle.jpg" valign="top" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr>
+                <td align="left" valign="top" width="515"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody><tr>
+                    <td height="10" valign="top"></td>
+                  </tr>
+
+                  <tr>
+                    <td valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody><tr>
+                        <td align="right" valign="top"><img src="images/cc1.png" height="44" width="11"></td>
+                        <td style="background-repeat:repeat-x;" background="images/cc3.png" valign="top" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody><tr>
+                            <td height="5"></td>
+                          </tr>
+                          <tr>
+
+                            <td class="NormalRedTExt" align="left"><strong><font color="Red" size="3.5"></font></strong><font color="Red" size="3.5"><center><strong><b><font face="Americana"><asp:Label ID="lblHomepageText" runat="server"></asp:Label></font></b></strong></center></font></td>
+                          </tr>
+                        </tbody></table></td>
+                        <td align="left" valign="top"><img src="images/cc2.png" height="44" width="11"></td>
+                      </tr>
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+
+                    <td height="10" valign="top"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><img src="images/flash.png" usemap="#Map" border="0" height="217" width="512"></td>
+                  </tr>
+                </tbody></table></td>
+                <td align="left" valign="top" width="30"></td>
+                <td align="left" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody><tr>
+
+                    <td height="10"></td>
+                  </tr>
+                  <tr>
+                    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody><tr>
+                        <td align="right" valign="bottom"><img src="images/m4.png" height="11" width="10"></td>
+                        <td bgcolor="#008D00" valign="bottom" width="100%"></td>
+                        <td align="left" valign="bottom"><img src="images/m3.png" height="11" width="10"></td>
+                      </tr>
+
+                      <tr>
+                        <td align="right" bgcolor="#008D00">&nbsp;</td>
+                        <td bgcolor="#008D00" height="155" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="202">
+                          <tbody><tr>
+                            <td height="10"></td>
+                          </tr>
+                          <tr>
+                            <td align="center"><img src="images/h1.png" height="32" width="191"></td>
+                          </tr>
+
+                          <tr>
+                            <td height="10"></td>
+                          </tr>
+                          <tr>
+                            <td align="center" height="30" valign="top">
+                            
+                            <asp:DropDownList ID="drpZip" runat="server" CssClass="DropDown">
+                                                </asp:DropDownList>
+                            
+                              
+                              
+                              
+                                                    
+                              </td>
+                          </tr>
+                          <tr>
+
+                            <td align="center"><a href="Shop.aspx"><img src="images/shopnow-btn.png" border="0" height="24" width="131"></a></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td align="center"><span class="normal_text2">Don't see your zip?</span> <a href="Registration.aspx" class="underline">click here</a></td>
+
+                          </tr>
+                        </tbody></table></td>
+                        <td align="left" bgcolor="#008D00">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="right" valign="top"><img src="images/m1.png" height="11" width="10"></td>
+                        <td bgcolor="#008D00" valign="top"></td>
+                        <td align="left" valign="top"><img src="images/m2.png" height="11" width="10"></td>
+                      </tr>
+
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top"><a href="Registration.aspx"><img src="images/signin-btn.png" border="0" height="45" width="196"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody></table></td>
+
+              </tr>
+            </tbody></table></td>
+            <td align="right" valign="top"><img src="images/right.jpg" height="253" width="14"></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td height="10"></td>
+      </tr>
+
+      <tr>
+        <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td align="left" height="240px" valign="bottom">
+            
+            <img src="images/b1.png" height="213" width="16"></td>
+            <td style="background-position:bottom; background-repeat:repeat-x;" background="images/b3.png" valign="top" width="100%">
+            
+          
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr>
+                <td valign="top" width="244"><table border="0" cellpadding="0" cellspacing="0" width="244">
+                  <tbody><tr>
+               <td valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody><tr>
+                        <td align="right" valign="bottom"><img src="images/Corner1.jpg" height="34" width="19"></td>
+                        <td class="headingwhite" style="background-repeat:repeat-x;" align="center" background="images/Corner3.jpg" valign="middle" width="100%"> <strong>
+                                                                                    <asp:Label ID="lbllefttitle" runat="server"></asp:Label></strong></td>
+                        <td align="left" valign="bottom"><img src="images/Corner2.jpg" height="34" width="19"></td>
+                      </tr>
+                    </tbody></table></td>
+                  
+
+                  </tr>
+                  <tr>
+                    <td bgcolor="#FEA500" height="191" valign="top">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="220">
+                      <tbody><tr>
+                        <td height="20"></td>
+                      </tr>
+                     <tr> <td class="normal_text3" align="left"><asp:Label runat="server" ID="lblbody"></asp:Label></td></tr>
+                     
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><img src="images/h22.png" height="6" width="244"></td>
+                  </tr>
+                </tbody></table></td>
+
+                <td valign="top" width="15">&nbsp;</td>
+                <td valign="top" width="244"><table border="0" cellpadding="0" cellspacing="0" width="244">
+                  <tbody><tr>
+                    <td valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody><tr>
+                        <td align="right" valign="bottom"><img src="images/Corner1.jpg" height="34" width="19"></td>
+                        <td class="headingwhite" style="background-repeat:repeat-x;" align="center" background="images/Corner3.jpg" valign="middle" width="100%">This Week&#8217;s Sale</td>
+                        <td align="left" valign="bottom"><img src="images/Corner2.jpg" height="34" width="19"></td>
+                      </tr>
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td bgcolor="#FEA500" height="156" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="220">
+                      <tbody><tr>
+                        <td height="20"></td>
+
+                      </tr>
+                      <tr>
+                        <td height="20"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td height="103" valign="top" width="5">
+                                        &nbsp;
+                                    </td>
+                                    <td align="center" valign="top">
+                                        <span class="YelloHedign">$<asp:Label ID="lblSalesPrice" runat="server" Text=""></asp:Label>*
+                                        </span>
+                                        <br>
+                                        
+                                        <span class="normal_text3"><font color="Green" size="2.5"><font new="" roman="" face="times">
+                                            <font color="#000000" size="5"><b>
+                                                <asp:Label ID="lblSalesTxt" runat="server" Text=""></asp:Label> </font>
+                                    </td>
+                                    <td align="center" valign="top">
+                                        &nbsp;
+                                    </td>
+                                    <td align="center" valign="top">
+                                        <table class="Border" align="center" border="0" cellpadding="0" cellspacing="0" width="95">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" height="88">
+                                                        <a href="sales.aspx">
+                                                            <%--<img src="images/sale_food.gif" alt="food" align="right" border="0" height="91" width="84">--%>
+                                                            <asp:Image ID="imgSaleImage" runat="server" align="right" border="0" Height="91"
+                                                                Width="84" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            
+                            
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td width="5">&nbsp;</td>
+                            <td> 
+								<br><a href="sales.aspx" class="footer_link2">Read More</a></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+
+                      
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><img src="images/h22.png" height="6" width="244"></td>
+                  </tr>
+                </tbody></table></td>
+                <td valign="top" width="15">&nbsp;</td>
+                <td valign="top" width="244"><table border="0" cellpadding="0" cellspacing="0" width="244">
+                  <tbody><tr>
+
+                    <td valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody><tr>
+                        <td align="right" valign="bottom"><img src="images/Corner1.jpg" height="34" width="19"></td>
+                        <td class="headingwhite" style="background-repeat:repeat-x;" align="center" background="images/Corner3.jpg" valign="middle" width="100%">Signup Today</td>
+                        <td align="left" valign="bottom"><img src="images/Corner2.jpg" height="34" width="19"></td>
+                      </tr>
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td bgcolor="#FEA500" height="190" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="220">
+                      <tbody><tr>
+                        <td height="10"></td>
+                      </tr>
+                      <tr>
+                        <td class="dollarbox1" align="center" height="55" valign="top">Get $10 off<br>
+                          your First Delivery</td>
+                      </tr>
+                      <tr>
+                        <td align="center" height="20" valign="top"><a href="Registration.aspx" class="dollarboxlink">Click here to signup now</a></td>
+                      </tr>
+                      <tr>
+                        <td align="center" height="20" valign="top"><img src="images/Car.jpg" border="0" height="63" width="171"></td>
+                      </tr>
+
+                    </tbody></table></td>
+                    
+                    
+                    
+                    
+                  </tr>
+                  <tr>
+                    <td valign="top"><img src="images/h22.png" height="6" width="244"></td>
+                  </tr>
+                </tbody></table></td>
+              </tr>
+
+            </tbody></table></td>
+            <td align="right" valign="bottom"><img src="images/b2.png" height="213" width="16"></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+    </tbody></table>
+        
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    
+    
+ 
+</asp:Content>

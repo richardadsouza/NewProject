@@ -1,0 +1,671 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using groceryguys.Class;
+
+namespace groceryguys.Admin
+{
+    public partial class admin_editoreder : System.Web.UI.Page
+    {
+        DbProvider dbListInfo = new DbProvider();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            lblAddError.Visible = false;
+            if (!IsPostBack)
+            {
+                try
+                {
+                    
+                    getCompanyName(); 
+                     BindUserInfo();
+                     changeLinks();
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Response.Write(ex.Message);
+                }
+            }
+
+        }
+        public void changeLinks()
+        {
+
+            int sideType = 0;
+            string admin = Convert.ToString(Request.Cookies["adminId"].Value);
+
+            //For Customers 
+            DataList MyDataListCustomers = (DataList)Page.Master.FindControl("dtlcustomers");
+            sideType = 1;
+            DataSet dsAdminCustomers = dbListInfo.GetSideLinkInfo(Convert.ToInt32(admin), sideType);
+            if (dsAdminCustomers.Tables[0].Rows.Count > 0)
+            {
+                if (dsAdminCustomers != null && dsAdminCustomers.Tables.Count > 0 && dsAdminCustomers.Tables[0].Rows.Count > 0)
+                {
+                    MyDataListCustomers.DataSource = dsAdminCustomers;
+                    MyDataListCustomers.DataBind();
+                }
+
+            }
+            //for Site Functions
+
+            DataList MyDataListSiteFunctions = (DataList)Page.Master.FindControl("dtlsitefunctions");
+            sideType = 2;
+            DataSet dsAdminSiteFunctions = dbListInfo.GetSideLinkInfo(Convert.ToInt32(admin), sideType);
+            if (dsAdminSiteFunctions.Tables[0].Rows.Count > 0)
+            {
+                if (dsAdminSiteFunctions != null && dsAdminSiteFunctions.Tables.Count > 0 && dsAdminSiteFunctions.Tables[0].Rows.Count > 0)
+                {
+                    MyDataListSiteFunctions.DataSource = dsAdminSiteFunctions;
+                    MyDataListSiteFunctions.DataBind();
+                }
+
+            }
+
+            //for reports
+
+            DataList MyDataListReports = (DataList)Page.Master.FindControl("dtlreports");
+            sideType = 3;
+            DataSet dsAdminReports = dbListInfo.GetSideLinkInfo(Convert.ToInt32(admin), sideType);
+            if (dsAdminReports.Tables[0].Rows.Count > 0)
+            {
+                if (dsAdminReports != null && dsAdminReports.Tables.Count > 0 && dsAdminReports.Tables[0].Rows.Count > 0)
+                {
+                    MyDataListReports.DataSource = dsAdminReports;
+                    MyDataListReports.DataBind();
+                }
+
+            }
+
+
+            foreach (DataListItem row1 in MyDataListCustomers.Items)
+            {
+                LinkButton MyLinkButton = new LinkButton();
+                MyLinkButton = (LinkButton)row1.FindControl("lkbCustomers");
+                string name = MyLinkButton.Text;
+                if (name == "Orders")
+                {
+                    MyLinkButton.CssClass = "sublinkactive1";
+                }
+            }
+            dbListInfo.dispose();
+
+
+        }
+        private void ViewAllDetails(int userId ,int orderId)
+        {
+            string strPaymentType = string.Empty;
+            string strText = string.Empty;
+            double accountdebit = 0;
+            DataSet dsUserOrderList = new DataSet();
+
+            DataSet dsUserOrderList1 = new DataSet();
+            dsUserOrderList1 = dbListInfo.Getuserordercount1(userId);
+            if (dsUserOrderList1.Tables.Count > 0)
+            {
+                if (dsUserOrderList1 != null && dsUserOrderList1.Tables.Count > 0 && dsUserOrderList1.Tables[0].Rows.Count > 0)
+                {
+                    lblOrderNumber.Text = "*-" + Convert.ToString(dsUserOrderList1.Tables[0].Rows[0]["invoice_number"]);
+                }
+            }
+
+            dsUserOrderList = dbListInfo.GetUserOrderDetail(userId, orderId);
+            if (dsUserOrderList.Tables.Count > 0)
+            {
+                if (dsUserOrderList != null && dsUserOrderList.Tables.Count > 0 && dsUserOrderList.Tables[0].Rows.Count > 0)
+                {
+                    lblAddress.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_address"]);
+                    lblAddress2.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_address2"]);
+                    lblCity.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_city"]);
+                    lblState.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_state"]);
+                    lblZip.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_zip"]);
+                   // lblOrderNumber.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_number"]);
+                    lblOrederDate.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["ordered"]);
+                    lblDeliveryDateTime.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["delivery"]);
+                    lblSpecialOrInfo.Text = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_instructions"]);  
+                    lblSubtotal.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_grocerytotal"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                    lblTax.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_tax"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                    lblTax2.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_tax2"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                    lblSodaDeposit.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_sodadeposit"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                    lblDeliveryFee.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_deliveryfee"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                    lblTips.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_tip"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                    lblOrderTotal.Text = Convert.ToDecimal(dsUserOrderList.Tables[0].Rows[0]["orders_totalfinal"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+
+                    ViewState["currentTotal"] = lblOrderTotal.Text;
+                    ViewState["complimentary"] = dsUserOrderList.Tables[0].Rows[0]["orders_complimentary"];
+
+                    strPaymentType = Convert.ToString(dsUserOrderList.Tables[0].Rows[0]["orders_paymenttype"]);
+
+                   
+
+                    ViewState["strPaymentType"] = strPaymentType;
+
+                   // tarsaction amount 
+                    double transactions_amount = dbListInfo.deposite_amount(userId,orderId);
+                    double Total = Convert.ToDouble(dsUserOrderList.Tables[0].Rows[0]["orders_totalfinal"]) + transactions_amount;
+
+
+                    if (strPaymentType == Convert.ToString(AppConstants.strCOD))
+                    {
+                        lblPaymentMethod.Text = Convert.ToString(AppConstants.strCODDetail);
+
+                    }
+                    else if (strPaymentType == Convert.ToString(AppConstants.strCC))
+                    {
+                        lblPaymentMethod.Text = Convert.ToString(AppConstants.strCCDetail);
+
+                    }
+                    else if (strPaymentType == Convert.ToString(AppConstants.strAF))
+                    {
+                        lblPaymentMethod.Text = Convert.ToString(AppConstants.strAFDetail);
+
+                    }
+                    else if (strPaymentType == Convert.ToString(AppConstants.strAFCOD))
+                    {
+                        accountdebit = Math.Round(Convert.ToDouble(System.Math.Abs(transactions_amount)), 2); 
+                        strText = Convert.ToDecimal(accountdebit).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strAFDetail) + "<br>" + Convert.ToDecimal(Total).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strCODDetail);
+                        lblPaymentMethod.Text = strText;
+
+
+                    }
+                    else if (strPaymentType == Convert.ToString(AppConstants.strAFCC))
+                    {
+                        accountdebit = Math.Round(Convert.ToDouble(System.Math.Abs(transactions_amount)), 2);  
+                        strText = Convert.ToDecimal(accountdebit).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strAFDetail) + "<br>" + Convert.ToDecimal(Total).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strCCDetail);
+                        lblPaymentMethod.Text = strText;
+
+
+                    }
+                    else
+                    {
+                        lblPaymentMethod.Text = "";
+                    }
+
+
+                }
+            }
+        }
+       
+
+        public void BindUserInfo()
+        {
+            int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+            DataSet dsShop = new DataSet();
+            //int userId = 0;
+            //double food_tax = 0.0;
+            //double nonfood_tax = 0.0;
+            //int membershipvalue = 0;
+            //int intProdId = 0;
+            //int intProdQty = 0;
+            string strProdNm = string.Empty;
+            string strPrice = string.Empty;
+            //double intGroceryTot = 0;
+            DataTable dtShop = new DataTable();
+            //DataRow rowShop;
+            string strTax = string.Empty;
+            string strOrderVal = string.Empty;
+            string strSoda = string.Empty;
+            //double intTotTax = 0.00;
+            //double rate = 0;
+            //double deliveryFee = 0;
+            //double priceNew = 0;
+            string image = string.Empty;
+            //int intCheck = 0;
+            //double price = 0;
+            //double Amt = 0;
+            //double TotAmt = 0;
+           // double sodaAmt = 0;
+           // double intTotsodaAmt = 0;
+           
+           
+           
+            DataSet dsUserItemList = new DataSet();
+           // DataRow rowShop;
+            dsUserItemList = dbListInfo.GetHomeUserInformation(userId);
+            if (dsUserItemList.Tables.Count > 0)
+            {
+                if (dsUserItemList != null && dsUserItemList.Tables.Count > 0 && dsUserItemList.Tables[0].Rows.Count > 0)
+                {
+
+                    lblFName.Text = Convert.ToString(dsUserItemList.Tables[0].Rows[0]["users_fname"]);
+                    lblLName.Text = Convert.ToString(dsUserItemList.Tables[0].Rows[0]["users_lname"]);
+                    lblPhone.Text = Convert.ToString(dsUserItemList.Tables[0].Rows[0]["users_phone"]);
+                    lblPhone2.Text = Convert.ToString(dsUserItemList.Tables[0].Rows[0]["users_cell"]);
+                   int membershipvalue = Convert.ToInt32(dsUserItemList.Tables[0].Rows[0]["users_Membership"]);
+                    ViewState["users_Membership"] = Convert.ToString(membershipvalue);
+                }
+            } 
+            ViewAllDetails(userId,orderId);
+            BindProductGrid();
+             orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+            DataSet dsUserProductList = new DataSet();
+            dsUserProductList = dbListInfo.GetUserProductDetail(orderId); 
+        }
+
+
+        public void BindProductGrid()
+        {
+          
+            gridUserProductList.Visible = true; 
+            lblMsg1.Visible = false;
+            int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+            DataSet dsUserProductList = new DataSet();
+            dsUserProductList = dbListInfo.GetUserProductDetail(orderId);
+            if (dsUserProductList.Tables.Count > 0)
+            {
+                if (dsUserProductList != null && dsUserProductList.Tables.Count > 0 && dsUserProductList.Tables[0].Rows.Count > 0)
+                {
+
+                    foreach (DataRow dtrow in dsUserProductList.Tables[0].Rows)
+                    { 
+                        dtrow["orderproduct_price"] = Convert.ToDecimal(dtrow["orderproduct_price"]).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                        dtrow["orderproduct_quantity"] = Convert.ToString(Math.Round(Convert.ToDouble(dtrow["orderproduct_quantity"]), 2));
+                        if (dtrow["orderproduct_edit"].ToString()=="1")
+                        {
+                            dtrow["product_title"] = "<span style='color:red'>*" + dtrow["product_title"] + "</span>";
+                        }
+                     }
+                    gridUserProductList.DataSource = dsUserProductList;
+                    gridUserProductList.DataBind();
+                }
+                else
+                {
+                    gridUserProductList.Visible = false;
+                    lblMsg1.Text = "";
+                    lblMsg1.Visible = true;
+                    lblMsg1.Text = AppConstants.noRecord;
+                    lblMsg1.ForeColor = System.Drawing.Color.Red;
+                }
+            }
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string address1 = string.Empty;
+            string address2 = string.Empty;
+            string city = string.Empty;
+            string zip = string.Empty;
+            string state = string.Empty;
+            int editorder=0;
+            int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+                address1=lblAddress.Text;
+                address2=lblAddress2.Text;
+                city=lblCity.Text;
+                zip=lblZip.Text;
+                state = lblState.Text;
+               editorder = dbListInfo.UpdateOrderDetailInfo1(address1,address2,city,zip,state,orderId,userId);
+               if (editorder != 0)
+               {
+                   lblMsg.Text = "";
+                   lblMsg.Text = "Delivery Address Updated Sucessfully";
+                   lblMsg.ForeColor = System.Drawing.Color.Black;
+               }
+               else
+               {
+                   lblMsg.Text = "";
+                   lblMsg.Text = "Delivery Address Not Updated";
+                   lblMsg.ForeColor = System.Drawing.Color.Red;
+               }
+
+        }
+
+        public int BindUpdateGrid(int intProductID, string txtTotalProductQty, double txtTotalProductPrice, int orderId, int userId )
+        {
+            int intupdate = dbListInfo.UpdateProductorederInfo(intProductID, txtTotalProductQty, Convert.ToDouble(txtTotalProductPrice), orderId, userId );
+         if (intupdate > 0)
+             BindProductGrid();
+           return intupdate;
+        }
+        public void getCompanyName()
+        {
+
+            DbProvider dbGetCompanyName = new DbProvider();
+            DataSet dsGetCompanyName = new DataSet();
+
+            dsGetCompanyName = dbGetCompanyName.getShortCompanyName();
+
+            if (dsGetCompanyName.Tables.Count > 0)
+            {
+                if (dsGetCompanyName != null && dsGetCompanyName.Tables.Count > 0 && dsGetCompanyName.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dtrow in dsGetCompanyName.Tables[0].Rows)
+                    {
+                        ViewState["DeliveryFeeCutOff"] = Convert.ToString(dtrow["DeliveryFeeCutOff"]);
+                        ViewState["DeliveryFee"] = Convert.ToString(dtrow["DeliveryFee"]);
+                        ViewState["TaxRate_Food"] = Convert.ToString(dtrow["TaxRate_Food"]);
+                        ViewState["TaxRate_NonFood"] = Convert.ToString(dtrow["TaxRate_NonFood"]);
+                        ViewState["MembersDeliveryFee"] = Convert.ToString(dtrow["MemberDeliveryFee"]);
+                    }
+                }
+            }
+            dbGetCompanyName.dispose();
+        }
+
+        private void RunForAllGridRows(int SelectedproductId , bool isdelet)
+        {
+            getCompanyName(); 
+            double FinalTotal = 0.0;
+            double SubTotal = 0.0;
+            int intProductID = Convert.ToInt32(SelectedproductId);
+            int intUpdateText = 0;
+            int orderId = 0;
+            double rate = 0;
+            //double Amt = 0;
+            double intTotTax = 0.00;
+            double food_tax = 0.0;
+            double nonfood_tax = 0.0;
+            string strSoda = string.Empty;
+            string strTax = string.Empty;
+            double intTotsodaAmt = 0;
+            double deliveryFee = 0;
+            double total = 0;
+            double sodaAmt = 0;
+            for (int i = 0; i < gridUserProductList.Rows.Count; i++)
+            {
+                TextBox txtTotalProductQty;
+                TextBox txtTotalProductPrice;
+                Label lblTotalProductQty;
+                Label lblProductPrice;
+                ImageButton btnUpdate;
+                orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+                int userId = Convert.ToInt32(Request.QueryString["userId"]);
+                GridViewRow item = gridUserProductList.Rows[i];
+                txtTotalProductQty = (TextBox)item.FindControl("txtTotalProductQty");
+                txtTotalProductPrice = (TextBox)item.FindControl("txtTotalProductPrice");
+                btnUpdate = (ImageButton)item.FindControl("btnUpdate");
+                lblTotalProductQty = (Label)item.FindControl("lblTotalProductQty");
+                lblProductPrice = (Label)item.FindControl("lblProductPrice");
+                intUpdateText = Convert.ToInt32(btnUpdate.CommandArgument);
+                  total = Convert.ToDouble(txtTotalProductPrice.Text) * Convert.ToDouble(txtTotalProductQty.Text);
+
+                
+                int IsUpdate = 0;
+                int CheckProductMatch = 0;
+                if (intProductID == intUpdateText)
+                {
+
+                    IsUpdate = BindUpdateGrid(intProductID, Convert.ToString(txtTotalProductQty.Text), Convert.ToDouble(txtTotalProductPrice.Text), orderId, userId );
+                    CheckProductMatch++;
+                }
+                else
+                {
+                    CheckProductMatch = 1;
+                    IsUpdate = 1;
+                }
+
+                // View
+                if (CheckProductMatch > 0 && IsUpdate > 0)
+                {
+                    SubTotal = total + SubTotal;
+                    BindDataByproductId(intUpdateText, ref strTax, ref strSoda, ref rate, ref total, ref intTotTax, ref  food_tax, ref nonfood_tax, ref sodaAmt, ref intTotsodaAmt, Convert.ToInt16(txtTotalProductQty.Text));
+
+                }
+            }
+
+            // gET aLL iNFO
+            ViewAllInfo(intTotsodaAmt, SubTotal, deliveryFee, food_tax, nonfood_tax, FinalTotal, total);
+        }
+        protected void gridUserProductList_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName == "UpdateDelievry")
+                {
+                    RunForAllGridRows(Convert.ToInt16(e.CommandArgument),false);
+
+                }
+                if (e.CommandName == "DeleteDelievry")
+                {
+                    int intProductID = 0;
+                    int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+                    intProductID = Convert.ToInt32(e.CommandArgument); 
+                    BindDeleteGrid(intProductID, orderId);
+                    RunForAllGridRows(Convert.ToInt16(e.CommandArgument),true);
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+
+            }
+        }
+        private void ViewAllInfo(double intTotsodaAmt, double SubTotal, double deliveryFee, double food_tax, double nonfood_tax, double FinalTotal, double TotAmt)
+        {
+
+          
+
+            int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+            lblSodaDeposit.Text = Convert.ToDecimal(intTotsodaAmt).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+
+
+            //deliveryFee
+            int membershipvalue = 0;
+            DataSet dsUserItemList = dbListInfo.GetHomeUserInformation(Convert.ToInt32(Request.QueryString["userId"]));
+            if (dsUserItemList.Tables.Count > 0)
+            {
+                if (dsUserItemList != null && dsUserItemList.Tables.Count > 0 && dsUserItemList.Tables[0].Rows.Count > 0)
+                {
+                    membershipvalue = Convert.ToInt32(dsUserItemList.Tables[0].Rows[0]["users_Membership"]);
+                    ViewState["users_Membership"] = Convert.ToString(membershipvalue);
+                }
+            } 
+            lblTax.Text = Convert.ToDecimal(food_tax).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            lblTax2.Text = Convert.ToDecimal(nonfood_tax).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+
+
+            double taxthree = Convert.ToDouble(lblTax.Text);
+            double taxnine = Convert.ToDouble(lblTax2.Text);
+            double sodadeposite = Convert.ToDouble(lblSodaDeposit.Text);
+            double Deliveryfee = Convert.ToDouble(ViewState["DeliveryFee"]);
+
+            if (SubTotal < Convert.ToDouble(ViewState["DeliveryFeeCutOff"]))
+            {
+                int member = Convert.ToInt32(ViewState["users_Membership"].ToString());
+                if (member == 1)
+                {
+                    //deliveryFee = 4.95;
+                    // deliveryFee = Convert.ToDouble(ViewState["MembersDeliveryFee"].ToString());
+                    deliveryFee = Convert.ToDouble(ViewState["MembersDeliveryFee"]);
+
+                }
+                else
+                {
+                    //deliveryFee = Convert.ToDouble(ViewState["DeliveryFee"].ToString());
+                    deliveryFee = Convert.ToDouble(ViewState["DeliveryFee"]);
+                }
+                //deliveryFee = Convert.ToDouble(ViewState["DeliveryFee"]);
+
+
+            }
+            else
+            {
+                deliveryFee = 0.00;
+
+
+            }
+            lblDeliveryFee.Text = Convert.ToDecimal(deliveryFee).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                  
+            double Tip = Convert.ToDouble(lblTips.Text);
+
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+
+            string strPaymentType = Convert.ToString(ViewState["strPaymentType"]);
+
+
+            // tarsaction amount 
+            double transactions_amount = dbListInfo.deposite_amount(userId, orderId);
+            //updated to add complimentary charges.
+            FinalTotal = taxthree + taxnine + sodadeposite + deliveryFee + Tip + SubTotal;
+            dbListInfo.UpdateOrdersNewTotal(FinalTotal, Convert.ToDouble(SubTotal), orderId, sodadeposite, taxthree, taxnine, deliveryFee, FinalTotal + transactions_amount/*Convert.ToDouble(ViewState["complimentary"]) + (FinalTotal-Convert.ToDouble(ViewState["currentTotal"]))*/);
+            lblSubtotal.Text = SubTotal.ToString();
+            lblOrderTotal.Text = FinalTotal.ToString();
+
+            
+            double Total = Convert.ToDouble(FinalTotal) + transactions_amount;
+            double accountdebit = 0;
+            string strText = string.Empty;
+
+            if (strPaymentType == Convert.ToString(AppConstants.strCOD))
+            {
+                lblPaymentMethod.Text = Convert.ToString(AppConstants.strCODDetail);
+
+            }
+            else if (strPaymentType == Convert.ToString(AppConstants.strCC))
+            {
+                lblPaymentMethod.Text = Convert.ToString(AppConstants.strCCDetail);
+
+            }
+            else if (strPaymentType == Convert.ToString(AppConstants.strAF))
+            {
+                lblPaymentMethod.Text = Convert.ToString(AppConstants.strAFDetail);
+
+            }
+            else if (strPaymentType == Convert.ToString(AppConstants.strAFCOD))
+            {
+                accountdebit = Math.Round(Convert.ToDouble(System.Math.Abs(transactions_amount)), 2); 
+                strText = Convert.ToDecimal(accountdebit).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strAFDetail) + "<br>" + Convert.ToDecimal(Total).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strCODDetail);
+                lblPaymentMethod.Text = strText;
+
+
+            }
+            else if (strPaymentType == Convert.ToString(AppConstants.strAFCC))
+            {
+                accountdebit = Math.Round(Convert.ToDouble(System.Math.Abs(transactions_amount)), 2); 
+                strText = Convert.ToDecimal(accountdebit).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strAFDetail) + "<br>" + Convert.ToDecimal(Total).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + " " + Convert.ToString(AppConstants.strCCDetail);
+                lblPaymentMethod.Text = strText;
+
+
+            }
+            else
+            {
+                lblPaymentMethod.Text = "";
+            }
+
+
+
+            BindProductGrid();
+        }
+
+        private void BindDataByproductId(int ProductId, ref  string strTax, ref string strSoda, ref double rate, ref double total, ref double intTotTax, ref double food_tax, ref double nonfood_tax, ref double sodaAmt, ref double intTotsodaAmt,int Quantity)
+        { 
+            
+            // get Product details
+
+            DataSet dsproductdetails = dbListInfo.GetProductDetails(ProductId);
+            if (dsproductdetails != null && dsproductdetails.Tables.Count > 0 && dsproductdetails.Tables[0].Rows.Count > 0)
+            {
+                strTax = Convert.ToString(dsproductdetails.Tables[0].Rows[0]["productlink_tax"]); 
+                strSoda = Convert.ToString(dsproductdetails.Tables[0].Rows[0]["productlink_soda"]);
+            }
+
+            // food non -food tax
+            if (strTax != "")
+            {
+                if (Convert.ToInt32(strTax) == 1)
+                {
+                    rate = total * (Convert.ToDouble(ViewState["TaxRate_Food"]) / 100);
+                    intTotTax = intTotTax + Math.Round(Convert.ToDouble(rate), 2);
+                    food_tax = food_tax + Math.Round(Convert.ToDouble(rate), 2);
+
+                }
+                else if (Convert.ToInt32(strTax) == 2)
+                {
+                    rate = total * (Convert.ToDouble(ViewState["TaxRate_NonFood"]) / 100);
+                    intTotTax = intTotTax + Math.Round(Convert.ToDouble(rate), 2);
+                    nonfood_tax = nonfood_tax + Math.Round(Convert.ToDouble(rate), 2);
+
+
+                }
+                else
+                {
+                    rate = 0.00;
+                    intTotTax = intTotTax + Math.Round(Convert.ToDouble(rate), 2);
+
+                }
+            }
+            if (strSoda != "" && strSoda != null)
+            {
+                sodaAmt = Convert.ToDouble(Quantity) * Convert.ToDouble(strSoda);
+                intTotsodaAmt = intTotsodaAmt + Math.Round(Convert.ToDouble(sodaAmt), 2);
+
+            }
+
+
+        }
+        public void BindDeleteGrid(int intProductID, int orderId)
+        {
+            int intDelete = 0;
+            intDelete = dbListInfo.DeleteProductOrderInfo1(intProductID, orderId);
+            if (intDelete > 0)
+            {
+                BindProductGrid();
+            }
+        }
+
+        protected void btncomment_Click(object sender, EventArgs e)
+        {
+            int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+           
+            int intupdate = 0;
+
+            intupdate = dbListInfo.UpdateCommentInfo(orderId, txtcomment.Text);
+
+           
+            if (intupdate != 0)
+            {
+                BindUserInfo();
+            }
+
+
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int orderId = Convert.ToInt32(Request.QueryString["orderId"]);
+            int productId = Convert.ToInt32(txtproductid.Text);
+            int qty = Convert.ToInt32(txtqty.Text);
+
+            DataSet dsProduct;
+            dsProduct = dbListInfo.SelectProductDeatils_new(productId);
+            if (dsProduct.Tables.Count > 0)
+            {
+                if (dsProduct != null && dsProduct.Tables.Count > 0 && dsProduct.Tables[0].Rows.Count > 0)
+                {
+                    double price = Convert.ToDouble(dsProduct.Tables[0].Rows[0]["productlink_price"]);
+                    int intinsert = 0;
+
+                    int checkalreadyexistproduct=dbListInfo.CheckNeworderProduct(orderId,productId);
+                    if (checkalreadyexistproduct > 0)
+                    {
+                        lblAddError.Visible = true;
+                        lblAddError.Text = "This item is already exist shopping list.";
+                    }
+                    else
+                    {
+                        intinsert = dbListInfo.InsertProductInfo_new(orderId, productId, qty, price);
+                        BindProductGrid();
+                        RunForAllGridRows(Convert.ToInt16(productId), false);
+                    }
+                }
+            }
+            txtqty.Text = string.Empty;
+            txtproductid.Text = string.Empty;
+        }
+
+
+
+    }
+}

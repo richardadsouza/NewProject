@@ -1,0 +1,412 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserLoginMasterPage.master.cs"
+    Inherits="valetgroceryfinal.UserLoginMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Valet Grocery - Online Grocery Shopping and Delivery in Baton Rouge Louisiana
+    </title>
+    <link rel="stylesheet" href="CSS/general.css" type="text/css">
+
+    <script type="text/javascript">
+
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+            }
+        }
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+ 
+    </script>
+
+    <style type="text/css">
+        body
+        {
+            background-image: url(images/MainBg.JPG);
+            background-repeat: repeat-x;
+            background-color: #f1f6f0;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+
+    <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+
+    <link href="CSS/UpdateProgressIE6.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/UpdateProgress.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/general.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/UserSide.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6378439-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<%--<head id="Head1"  runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to The Pantry Filler!</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/mainbg.jpg);
+	background-repeat: repeat-x;
+}
+-->
+</style>
+
+    
+
+    <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+    <link href="CSS/UpdateProgressIE6.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/UpdateProgress.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+     <link href="CSS/Style.css" rel="stylesheet" type="text/css" />
+   
+    <link href="CSS/UserSide.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>--%>
+<body topmargin="0" leftmargin="0" onload="MM_preloadImages('images/Home.png','images/How_It_Works.png','images/Shop.png','images/My_Account.png','images/View_Cart.png','images/Refer_a_friend.jpg','images/Pre_Made_List.jpg','images/FAQs.jpg','images/My_Shopping_List.jpg','images/Shopping_Funds.jpg')"
+    bgcolor="background-color: #f1f6f0" marginheight="0" marginwidth="0">
+    <form id="form1" runat="server">
+    <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td style="background-repeat: repeat-x;" background="images/TopBG.jpg" height="16">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="white">
+                                    <tbody>
+                                        <tr>
+                                          <td width="137" align="left"><img src="images/logo.jpg" width="137" height="109" /></td>
+                                         <%-- <td width="312" align="left"><img src="images/logo.jpg"/></td>--%>
+                                            <td align="left" valign="top">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="73" valign="top">
+                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                             <td align="left" width="117">
+                                                                                <img src="images/logo2.jpg" height="71" width="177">
+                                                                            </td>
+                                                                            <td align="left" width="294">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                            <%--<td align="left" width="119">
+                                                                                &nbsp;
+                                                                            </td> --%>
+                                                                             
+                                                                            <td align="right">
+                                                                                <asp:Panel ID="pnlLogin" runat="server">
+                                                                                    <table border="0" cellpadding="0" cellspacing="0" width="175">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="right">
+                                                                                                    <img src="images/c1.png" height="67" width="9">
+                                                                                                </td>
+                                                                                                <td bgcolor="#FFF6E5" width="100%">
+                                                                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="95%">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td align="left">
+                                                                                                                    <span class="normal_text"><strong>Current Member?</strong></span> <a href="LoginPage.aspx"
+                                                                                                                        class="Link2">Login</a>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td height="10">
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left">
+                                                                                                                    <span class="normal_text"><strong>New Member?</strong></span> <a href="Registration.aspx"
+                                                                                                                        class="Link2">Signup</a>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                                <td align="left">
+                                                                                                    <img src="images/c2.png" height="67" width="9">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </asp:Panel>
+                                                                                <asp:Panel ID="pnlLoged" runat="server" Visible="false">
+                                                                                    <table border="0" cellpadding="0" cellspacing="0" width="175">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="right">
+                                                                                                    <img src="images/c1.png" height="67" width="9">
+                                                                                                </td>
+                                                                                                <td bgcolor="#FFF6E5" width="100%">
+                                                                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="95%">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td align="left">
+                                                                                                                    <span class="normal_text"><strong>Welcome
+                                                                                                                        <asp:Label ID="lblUserFirstName" runat="server" Text="" CssClass="normal_text" Font-Bold="true"></asp:Label></strong></span>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                            <%--<tr>
+                                                          <td height="10">
+                                                          </td>
+                                                      </tr>--%>
+                                                                                                            <tr align="left">
+                                                                                                                <td width="115" class="normal_text">
+                                                                                                                    <strong><a class="normal_text" href="UserLogout.aspx">Logout</a></strong>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                                <td align="left">
+                                                                                                    <img src="images/c2.png" height="67" width="9">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </asp:Panel>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="bottom">
+                                                                <table align="right" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td align="left" width="1120">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <a href="index.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','images/Home-h.png',1)">
+                                                                                    <img src="images/Home-h.png" name="Image2" id="Image2" border="0" height="35" width="108"
+                                                                                        alt="Home"></a>
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <a href="How.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','images/How_It_Works-h.png',1)">
+                                                                                    <img src="images/How_It_Works.png" name="Image3" id="Image3" border="0" height="35"
+                                                                                        width="108" alt="How It Works"></a>
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <a href="Shop.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','images/Shop-h.png',1)">
+                                                                                    <img src="images/Shop.png" name="Image4" id="Image4" border="0" height="35" width="108"
+                                                                                        alt="Shop">
+                                                                                </a>
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <a href="MyAccount.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image5','','images/My_Account-h.png.png',1)">
+                                                                                    <img src="images/My_Account.png" name="Image5" id="Image5" border="0" height="35"
+                                                                                        width="108" alt="My Account"></a>
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <a href="product_order.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','images/View_Cart-h.png',1)">
+                                                                                    <img src="images/View_Cart.png" name="Image6" id="Image6" border="0" height="35"
+                                                                                        width="108" alt="View Cart"></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-repeat: repeat-x;" background="images/subbuttonbg1.png" height="40"
+                                valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" valign="top" width="47">
+                                                <img src="images/buttonbg1.jpg" height="40" width="13">
+                                            </td>
+                                            <td align="left" valign="top">
+                                                <a href="referral.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','images/Refer_a_friend-h.jpg',1)">
+                                                    <img src="images/Refer_a_friend.jpg" name="Image10" id="Image10" border="0" height="40"
+                                                        width="121" alt="Refer a Friend"></a>
+                                            </td>
+                                            <td align="left" valign="top">
+                                                <a href="Userpremadelist.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','images/Pre_Made_List-h.jpg',1)">
+                                                    <img src="images/Pre_Made_List.jpg" name="Image11" id="Image11" border="0" height="40"
+                                                        width="146" alt="Pre-made Lists"></a>
+                                            </td>
+                                            <td align="left" valign="top">
+                                                <a href="faqs.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/FAQs-h.jpg',1)">
+                                                    <img src="images/FAQs.jpg" name="Image12" id="Image12" border="0" height="40" width="122"
+                                                        alt="FAQs"></a>
+                                            </td>
+                                            <td align="left" valign="top">
+                                                <a href="mylists.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','images/My_Shopping_List-h.jpg',1)">
+                                                    <img src="images/My_Shopping_List.jpg" name="Image13" id="Image13" border="0" height="40"
+                                                        width="169" alt="My Shopping Lists"></a>
+                                            </td>
+                                            <td align="left" valign="top">
+                                                <a href="AccountFunds.aspx" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','images/Shopping_Funds-h.jpg',1)">
+                                                    <img src="images/Shopping_Funds.jpg" name="Image14" id="Image14" border="0" height="40"
+                                                        width="177" alt="Shopping Funds"></a>
+                                            </td>
+                                            <td align="right" valign="top" width="18">
+                                                <img src="images/buttonbg2.jpg" height="40" width="13">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#008D00">
+                <table width="801" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td bgcolor="#FFFFFF">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>
+                                        <table width="773" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td valign="top">
+                                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                    </asp:ContentPlaceHolder>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td valign="top">
+                                                        <img src="images/f1.png" height="142" width="10">
+                                                    </td>
+                                                    <td style="background-repeat: repeat-x;" background="images/f3.png" valign="top"
+                                                        width="100%">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        &nbsp;
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" height="30">
+                                                                                        <a href="index.aspx" class="footer_link">Home</a> <span class="footer_text">|</span>
+                                                                                        <a href="Aboutcompany.aspx" class="footer_link">About Us</a> <span class="footer_text">
+                                                                                            |</span> <a href="How.aspx" class="footer_link">How It Works</a> <span class="footer_text">
+                                                                                                |</span> <a href="Shop.aspx" class="footer_link">Shop Now</a> <span class="footer_text">
+                                                                                                    |</span> <a href="AccountFunds.aspx" class="footer_link">Shopping 
+                                                                                        Funds</a>
+                                                                                        <span class="footer_text">|</span> <a href="ContactUsPage.aspx" class="footer_link">
+                                                                                            Contact Us </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="footer_text" align="center">
+                                                                                        Use of Valet Grocery and this Web site constitutes acceptance of our <a href="terms.aspx"
+                                                                                            class="footer_link2">Terms of Use</a> and <a href="privacy.aspx" class="footer_link2">
+                                                                                                Privacy Policy.</a><br>
+                                                                                        Valet Grocery, All Rights Reserved.
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        &nbsp;
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                         <a href="#">
+                                                                                <img src="images/logo3.png" border="0" height="59" width="73"></a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td valign="top">
+                                                        <img src="images/f2.png" height="142" width="10">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <%--<td width="11">
+                            &nbsp;
+                        </td>--%>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

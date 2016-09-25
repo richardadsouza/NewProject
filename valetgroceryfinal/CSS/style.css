@@ -1,0 +1,1163 @@
+/* 
+    Document   : style
+    Created on : Jun 30, 2014, 10:29:43 AM
+    Author     : Husnain Ali
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@font-face {font-family: OpenSans-Bold;src: url('../fonts/OpenSans-Bold.woff');}
+@font-face {font-family: OpenSans-Light;src: url('../fonts/OpenSans-Light.woff');}
+@font-face {font-family: OpenSans-Regular;src: url('../fonts/OpenSans-Regular.woff');}
+@font-face {font-family: OpenSans-Semibold;src: url('../fonts/OpenSans-Semibold.woff');}
+@font-face {font-family: PoiretOne-Regular;src: url('../fonts/PoiretOne-Regular.woff');}
+
+root {display: block;}
+html{margin: 0;padding: 0;}
+body{
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    background: url(../images/body-bg.jpg) no-repeat top center;
+}
+.cart{
+    font-size: 16px;
+    color: #4c4a40;
+    font-family: OpenSans-Bold;
+    float: right;
+    margin-top: 8px;
+    padding-left: 25px;
+    background: url(../images/cart.png) no-repeat left center;
+}
+.cart span{
+    font-size: 12px;
+    color: #777777;
+    font-family: OpenSans-Regular;
+}
+.headers_btn_text{
+    float: right;
+    font-size: 20px;
+    font-family: OpenSans-Light;
+    color: #000;
+    margin-top: 10px;
+}
+.headers_btn_text a{margin-left: 20px;}
+.menu_background{
+    background-color: #1e1dcb;
+    border-bottom: 6px solid #f60412;
+    margin-bottom: 15px;
+}
+.menu_background input[type="image"]{float: right;}
+.menu_background form{
+    float: right;
+    margin-top: 6px;
+}
+.menu_background input[type="text"]{
+    border: medium none;
+    border-radius: 10px 0 0 10px;
+    float: right;
+    padding: 8px 15px;
+    width: 220px;
+}
+.menu_background .col-md-5 a{
+    float: left;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+.footer
+{
+    line-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.footer a{
+    border-right: 1px solid #0d07d2;
+    color: #0d07d2;
+    display: inline-block;
+    margin-bottom: 13px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.footer a.no-border{border-right: none;}
+h1{
+    font-family: PoiretOne-Regular;
+    font-size: 36px;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 35px;
+}
+.extra-padding{
+    padding: 0 38px;
+    border-bottom: 1px solid #bec0ec;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+.boxes{
+    background: url(../images/weekly-slae-bg.png) repeat;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 15px;
+    padding-bottom: 20px;
+    min-height: 347px;
+}
+.boxes.bg2{background: url(../images/testimonail-bg.png) repeat;}
+.boxes.bg3{background: url(../images/woman.png) no-repeat right bottom, url(../images/place-order-bg.png) repeat;}
+.boxes.bg4{background: url(../images/place-order-bg.png) repeat;min-height: 378px;}
+.boxes .title{
+    font-family: PoiretOne-Regular;
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #1e1dcb;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.boxes.bg3 .title {
+    font-size: 29px;
+    line-height: 51px;
+}
+.boxes.bg4 .title{
+    background: url("../images/mazda.png") no-repeat 30px 26px #1e1dcb;
+    font-family: OpenSans-Bold;
+    font-size: 26px;
+    line-height: 48px;
+    padding-left: 48px;
+}
+.boxes.bg4 p, .boxes.bg4 p a{
+    color: #5c5b5b;
+    font-size: 18px;
+}
+.boxes.bg4 p{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.boxes.bg4 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){width: 80%;}
+.boxes.bg4 .bootstrap-select > .btn {
+    border-radius: 10px;
+    color: #5c5b5b;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    width: 100%;
+}
+.boxes.bg4 .bootstrap-select.btn-group .btn .caret{
+    border: none;
+    background: url(../images/location-icon.png);
+    width: 45px;
+    height: 46px;
+    right: 0;
+    top: 1px;
+}
+.boxes .t-name{
+    font-family: OpenSans-Bold;
+}
+.boxes .price{
+    color: #ff0000;
+    font-size: 50px;
+    font-family: OpenSans-Bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.readmore{text-transform: uppercase;font-family: OpenSans-Bold;margin-top: 16px;float: left;color: #fff;}
+.boxes .col-xs-5, .boxes .col-xs-3{padding-right: 0px;}
+.boxes p{line-height: 24px;}
+.extra-margin{margin-top: 20px;}
+.box3text{
+    color: #0c06cb;
+    font-family: OpenSans-Bold;
+    font-size: 27px;
+    line-height: 42px;
+    margin-top: 18px;
+}
+.box3text .text{font-size: 35px;}
+.box3text a{
+    float: left;
+    margin-top: 10px;
+}
+.flexslider {
+    background: none;
+    border: medium none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+.flex-viewport{border-radius: 20px;}
+.flexslider .slides > li{position: relative;}
+.slider_text{
+     color: #000;
+    font-family: PoiretOne-Regular;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 80px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 75px;
+    width: 100%;
+}
+.slider_text span{
+    font-size: 80px;
+}
+.slider_text img {
+    display: inline !important;
+    max-width: 274px;
+}
+.flex-control-nav {
+    bottom: 6px;
+}
+.flex-control-paging li a{height: 15px;width: 15px;}
+.flex-control-paging li a.flex-active{background-color: #1e1dcb;}
+
+/******Old styles added******/
+a.aacordindiv:hover {
+    background-color: #008d00;
+    background-image: url("../images/OpenIcon.jpg");
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    border: 1px solid #a6b3c6;
+    color: #ffffff;
+    display: block;
+    font-family: OpenSans-Regular, Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 23px;
+    margin-bottom: 1px;
+    padding: 7px 0 0 26px;
+    text-decoration: none;
+}
+a.aacordindiv:link {
+    background-color: #2220BC;
+    background-image: url("../images/OpenIcon.jpg");
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    border: 1px solid #a6b3c6;
+    color: #ffffff;
+    display: block;
+    font-family: OpenSans-Regular, Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 23px;
+    margin-bottom: 1px;
+    padding: 7px 0 0 26px;
+    text-decoration: none;
+}
+a.aacordindiv:visited {
+    background-color: #2220BC;
+    background-image: url("../images/OpenIcon.jpg");
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    border: 1px solid #a6b3c6;
+    color: #ffffff;
+    display: block;
+    font-family: OpenSans-Regular, Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 23px;
+    margin-bottom: 1px;
+    padding: 7px 0 0 26px;
+    text-decoration: none;
+}
+.admin-text {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	color: #2220BC;
+	display: block;
+	float: right;
+	padding-right: 50px;
+	margin: 50px 0px 0px;
+}
+.AjaxCalendar .ajax__calendar_container {
+    background-color: white;
+    border: 1px solid #a0acd4;
+}
+.ajax__calendar_container {
+    cursor: default;
+    font-family: tahoma,verdana,helvetica;
+    font-size: 11px;
+    padding: 4px;
+    position: absolute;
+    text-align: center;
+    width: 170px;
+}
+.AjaxCalendar .ajax__calendar_body {
+    background-color: #2220BC;
+    border: 1px solid white;
+    color: white;
+}
+.ajax__calendar_body {
+    height: 139px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 170px;
+}
+.AjaxCalendar .ajax__calendar_header .ajax__calendar_title {
+    color: #040404;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+.ajax__calendar_title {
+    cursor: pointer;
+    font-weight: bold;
+}
+.button {
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #2220BC;
+    text-align: center;
+    padding-left: 15px;
+    border: 1px solid #fcd500;
+    display: block;
+    width: auto;
+    margin-right: 5px;
+    float: left;
+    padding-right: 15px;
+    height: 32px;
+    text-decoration: none;
+}
+.button:visited {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #2220BC;
+	text-align: center;
+	padding-left: 15px;
+	border: 1px solid #fcd500;
+	display: block;
+	width: auto;
+	margin-right: 5px;
+	float: left;
+	padding-right: 15px;
+	height: 32px;	
+	text-decoration: none;
+}
+.button:hover {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #2220BC;
+	text-align: center;
+	padding-left: 15px;
+	border: 1px solid #fcd500;
+	display: block;
+	width: auto;
+	margin-right: 5px;
+	float: left;
+	padding-right: 15px;
+	height: 32px;	
+	text-decoration: none;
+}
+.buttonNew
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #2220BC;
+    text-align: center;
+    padding-left: 5px;
+    border: 1px solid #000000;
+    display: block;
+    width: auto;
+    margin-right: 5px;
+    padding-right: 15px;
+    height: 32px;
+    text-decoration: none;
+}
+.buttonNew:visited {
+	font-family: Opensans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #008D00;
+	text-align: center;
+	padding-left: 5px;
+	border: 1px solid #000000;
+	display: block;
+	width: auto;
+	margin-right: 5px;	
+	padding-right: 15px;
+	height: 32px;	
+	text-decoration: none;
+}
+.buttonNew:hover {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #000;
+	text-align: center;
+		padding-left: 5px;
+	border: 1px solid #000000;
+	display: block;
+	width: auto;
+	margin-right: 5px;	
+	padding-right: 15px;
+	height: 32px;	
+	text-decoration: none;
+}
+.buttonUser
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #ffffff;
+	background-color: #2220BC;
+	text-align: center;
+	padding-left: 15px;
+	border: 1px solid #fcd500;
+	display: block;
+	width: auto;
+	margin-right: 5px;
+	float: left;
+	padding-right: 15px;
+	height: 32px;
+	text-decoration: none;
+}
+.buttonUserNew {
+    background-color: #2220BC;
+    border: 1px solid #fcd500;
+    color: #ffffff;
+    display: block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    height: 32px;
+    text-align: center;
+    text-decoration: none;
+}
+.divBorder {
+	border: 1px solid #c8c8c8;
+	padding: 5px;
+	display: block;
+}
+.FieldText
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #2220BC;
+    text-align: center;
+}
+.FieldTextNew
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #2220BC;
+    text-align: left;
+}
+.FieldTextSearch {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #2220BC;
+	padding-left:125px;
+}
+.formHeading
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight:bold;
+	color:  #2220BC;
+	text-align:left;	
+}
+.formHeadingNew {
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #008D00;
+}
+.formHeadingText
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-align:left;
+	padding-left:15px;
+	background-color: #2220BC;
+}
+.formText {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;	
+	color: #040404;
+}
+.formTextUser
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #000000;
+	text-align: justify;	
+}
+.formTextUserSubTitle
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight:bold;
+	color: #000000;
+	text-align: justify;
+	padding-right:20px;
+}
+.formTextSmall {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #040404;
+}
+.formTextSmall1
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:  #000000;
+}
+.formTextSmallPrint {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #040404;
+}
+.formTextSmallPrintUser {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #040404;
+}
+.formTextUserLoyaltyMyAccount
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-align: left;
+	padding-right:5px;
+	padding-left:5px;
+}
+.formTextPrintUser {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #040404;
+}
+.formTextSmallPrintUser {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #040404;
+}
+.header {
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+.headerstrip {
+	background-color: #888888;
+	display: block;
+	height: 6px;
+	margin: 0px;
+	padding: 0px;
+}
+.headingbox {
+	background-color: #008D00;
+	height: 30px;
+	border: 1px solid #fcd500;
+	text-align:center;
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FFFFFF;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.horizontalLine
+{
+	display:block;
+	height:1px;	
+	border-bottom:dotted 1px #666666;	
+}
+.horizontalLine1
+{	
+	display:block;
+	height:1px;	
+	border-bottom:dotted 1px #666666;	
+}
+LEGEND {
+    background-color: #2220BC;
+    background-position: 0 0;
+    border-color: #cccccc;
+    border-style: none;
+    border-width: 1px;
+    clear: both;
+    color: #ffffff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-left: 11px;
+    margin-top: 0;
+    padding: 5px 30px;
+}
+.LinkRed
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color:Red;
+	text-decoration: underline;	
+}
+.logintextheading {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #2220BC;
+}
+.MainTableBorderNew {
+	border: 1px solid #c9c9c9;
+	padding:5px;
+}
+.MainTableBorder {
+	border: 1px solid #c9c9c9;	
+}
+.Radiobutton {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding-left: 5px;
+	color: #040404;
+}
+.sideLink1
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2220BC;
+    text-decoration: underline;
+}
+.table-border {
+    border: thin solid #e4e4e4;
+}
+.textBoxGridSmall {
+	font-family:OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #008D00;
+	margin: 0px 0px 0px 0px;
+	height: 18px;
+	width: 50px;
+	
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+	border: 1px solid #aeaeae;
+}
+.textbox1 {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	padding: 1px;
+	height: 24px;
+	width: 157px;
+	border: 1px solid #999999;
+	margin-left: 5px;
+	padding-top:5px
+}
+.textBox2 {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #2220BC;
+	margin: 0px 0px 0px 10px;
+	height: 20px;
+	width: 307px;
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	border: 1px solid #aeaeae;
+}
+.textBox {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #2220BC;
+	margin: 0px 0px 0px 10px;
+	height: 20px;
+	width: 194px;
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	border: 1px solid #aeaeae;
+}
+.textboxSmall {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	padding: 1px;
+	height: 20px;
+	width: 110px;
+	border: 1px solid #999999;
+	padding-top:5px;	
+}
+.textBoxSmall {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #2220BC;
+	margin: 0px 0px 0px 0px;
+	height: 18px;
+	width: 85px;
+	padding-top: 4px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+	border: 1px solid #aeaeae;
+}
+.textboxSmallNew {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	padding: 1px;
+	height: 20px;
+	width: 28px;
+	border: 1px solid #999999;
+	padding-top:5px;	
+}
+.textBoxPayment {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #2220BC;
+	margin: 0px 0px 0px 10px;
+	height: 20px;
+	width: 400px;
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	border: 1px solid #aeaeae;
+}
+.textMultiline {
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    color: #000000;
+    text-decoration: none;
+    padding: 1px;
+    height: 100px;
+    width: 250px;
+    border: 1px solid #999999;
+    margin-left: 5px;
+}
+.star1
+{
+	color:Red;
+}
+.star
+{
+	color:Red;
+}
+.ErrorTxt {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FF0000;
+}
+.ErrorTxt1
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color:Red;
+}
+.ErrorTxtNew1
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+	color:Red;
+}
+.ErrorTxtNew2
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color:Red;
+}
+.DropDown
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0px 0px 0px 5px;
+    height: 23px;
+    width: 157px;
+    border: 1px solid #aeaeae;
+    padding: 1px;
+    padding-top: 1px;
+    color: #000000;
+}
+.DropDownBox
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #2220BC;
+    margin: 0px 0px 0px 10px;
+    height: 23px;
+    width: 205px;
+    border: 1px solid #aeaeae;
+    padding: 1px;
+    padding-top: 1px;
+}
+.DropDownBox1
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #008D00;
+    margin: 0px 0px 0px 10px;
+    height: 23px;
+    width: 307px;
+    border: 1px solid #aeaeae;
+    padding: 1px;
+    padding-top: 1px;
+}
+.Userlink1 {
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #2220BC;
+    text-decoration: underline;
+    background-repeat: no-repeat;
+}
+.ProdLink1
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:normal;
+	color: #404248;
+	text-decoration:underline;	
+}
+.productcrossed
+{	
+	text-decoration: line-through;
+	color: #FF0000;
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;	
+	text-align:left;
+	height:30px;	
+}
+.pagingtext {
+    background-color: #2220BC;
+    color: #ffffff;
+    font-family: OpenSans-Regular, Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: right;
+    text-decoration: none;
+}
+.pagingUsertext
+{
+    font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #008D00;
+    text-align: right;
+}
+.gridBorder
+{
+    border-color: #c2c2c2;
+    border-width: 1px;
+}
+.gridAlternatetext
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #404248;
+	background-color:#f6f6f6;
+	text-align:left;
+	height:30px;	
+}
+.gridAlternatetextPrint
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #404248;
+	background-color:#FFFFFF;
+	text-align:left; 
+}
+.gridheading{
+	background-color: #e4e4e4;    
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #404248;   
+	height:35px;
+	text-align:center;
+	border:0px;	
+}
+.gridheadingNewprint{
+	background-color: #e4e4e4;
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #404248;
+	height:20px;
+	text-align:left;	
+}
+.gridtext {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #404248;
+	background-color:#FFFFFF;
+	text-align:left;
+	height:30px;
+	border:0px;
+	padding-left:5px;	
+}
+.gridtext_ {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #404248;
+	background-color:#FFFFFF;
+	text-align:left;
+	height:30px;
+	border:0px;
+	padding-left:5px;	
+}
+.gridtextPrint {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #404248;
+	background-color:#FFFFFF;
+	text-align:left; 
+}
+.gridUserheading{
+	background-color: #2220BC;
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	height:35px;
+	text-align:left;	
+}
+.gridUserAlternatetext
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #404248;
+	background-color:#f6f6f6;
+	text-align:left;
+	height:30px;
+	padding-left:10px;	
+}
+.gridUsertext {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #404248;
+	/*background-color:#FFFFFF;*/
+    background-color:transparent;
+	text-align:left;
+	height:30px;
+	padding-left:10px;	
+}
+.linkNew1
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #2220BC;
+	text-decoration:underline;	
+	background-repeat: no-repeat;
+}
+.Logoutlink {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #01255b;
+	text-decoration: none;
+}
+a.Logoutlink:link {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #01255b;
+	text-decoration: none;
+}
+a.Logoutlink:visited {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #01255b;
+	text-decoration: none;
+}
+a.Logoutlink:hover {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #01255b;
+	text-decoration: none;
+}
+.UpdateProgressText
+{
+	font-family: Verdana;
+	font-size: 14px;
+	font-style: normal;
+	text-decoration: none;
+	font-weight: bolder;
+}
+.underheaderbgblack {
+	background-color: #666666;
+	height:2px;
+}
+.username {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #FE0000;
+	text-decoration: none;
+}
+.padding
+{	
+	
+}
+.pagingtext_ {
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration:none;
+	background-color:#008D00;
+	text-align:right;
+}
+.picktimeHeaderText
+{
+	font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-align:left;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #2220BC;
+}
+.printpadding {
+    padding-top: 25px;
+}
+.sublink1 {
+    background-image: url("../images/arrow-img.jpg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #2220BC;
+    display: block;
+    font-family: OpenSans-Regular, Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    height: 17px;
+    padding-left: 15px;
+    padding-top: 3px;
+    text-decoration: none;
+}
+.sublinkactive1 {
+    background-image: url("../images/arrow-img.jpg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #000000;
+    display: block;
+    font-family: OpenSans-Regular, Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 17px;
+    padding-left: 15px;
+    padding-top: 3px;
+    text-decoration: none;
+}
+.tableBorder  
+{
+	border: thin solid #e4e4e4;
+}
+.tableBorderPickTime
+{
+	border: thin solid #2220BC;
+}
+
+@media (min-width: 641px){
+    #myNavbar{background: none;border: none;margin-bottom: 0;margin-top: 0;}
+    #myNavbar .container{width: auto;padding: 0;}
+    #myNavbar .container .navbar-collapse{padding: 0;}
+    .navbar-collapse {
+        padding-left: 0px;
+        padding-right: 0;
+    }
+    .navbar-nav > li > a {font-family: OpenSans-Regular;color: #fff !important;font-size: 14px;padding: 0;text-transform: uppercase;}
+    .navbar-nav > li > a:hover, .navbar-nav > li > a.selected {color: #fff;}
+    .navbar-nav > li {margin-top: 19px;padding: 0 10px;border-right: 1px solid #fff;}
+    .navbar-nav > li:last-child{border-right: none;}
+    .navbar-nav > li:hover, .navbar-nav > li.selected{}
+}
+@media (max-width: 768px){
+    
+}
+@media (max-width: 641px){
+    
+}
+@media (max-width: 481px){
+    
+}
+@media (max-width: 360px){
+    
+}
+

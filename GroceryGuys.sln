@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{90414011-9521-424D-9F19-E09A2A15EF53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{919209D0-55DD-49E1-BA95-30A7591D1E5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{90414011-9521-424D-9F19-E09A2A15EF53} = {90414011-9521-424D-9F19-E09A2A15EF53}
+		{8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3} = {8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryGuys", "valetgroceryfinal\GroceryGuys.csproj", "{3B66BBFC-65A7-427F-9297-A3D43B857DE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90414011-9521-424D-9F19-E09A2A15EF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90414011-9521-424D-9F19-E09A2A15EF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90414011-9521-424D-9F19-E09A2A15EF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90414011-9521-424D-9F19-E09A2A15EF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919209D0-55DD-49E1-BA95-30A7591D1E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919209D0-55DD-49E1-BA95-30A7591D1E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919209D0-55DD-49E1-BA95-30A7591D1E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919209D0-55DD-49E1-BA95-30A7591D1E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB11D7C-CEF0-40BF-B284-53AFCD67C1F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B66BBFC-65A7-427F-9297-A3D43B857DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B66BBFC-65A7-427F-9297-A3D43B857DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B66BBFC-65A7-427F-9297-A3D43B857DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B66BBFC-65A7-427F-9297-A3D43B857DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

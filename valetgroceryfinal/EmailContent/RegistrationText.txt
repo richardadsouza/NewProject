@@ -1,0 +1,85 @@
+﻿<html>
+<body>
+    <table>
+        <tr>
+            <td height="5px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                Dear $Username$,
+            </td>
+        </tr>
+        <tr>
+            <td height="5px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+               Congratulations on becoming a new and valued Valet Grocery member.<br/>
+               Just for signing up we have placed $10 into your shopping funds account which can be used towards your first order.
+            </td>
+        </tr>
+        <tr>
+            <td height="5px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                With our Valet Grocery Online Store and Delivery Service we take away all of the hassle normally associated with grocery shopping.  Now in less time than it normally takes to drive to the store and find a parking space you can do all of your grocery shopping online and we will deliver your order to your apartment, home or office on the day and time you choose.
+            </td>
+        </tr>
+        <tr>
+            <td height="15px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                <b>Your username is</b>: $emailId$
+            </td>
+        </tr>
+        <tr>
+            <td height="15px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                <b>Your Password is</b>: $password$
+            </td>
+        </tr>
+        <tr>
+            <td height="15px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                Order today, get groceries tomorrow, it's that simple!
+            </td>
+        </tr>
+        <tr>
+            <td height="15px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+               Start Shopping Today and enjoy the Valet Grocery Experience – where your groceries arrive fast and fresh and you never have to fight traffic or wait in a checkout line.<br/>
+               Again we appreciate you signing up and look forward to serving you in the near future.
+            </td>
+        </tr>
+        <tr>
+            <td height="10px">
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                Sincerely,
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Verdana; font-size: 12px;">
+                The $companyName$ Team
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

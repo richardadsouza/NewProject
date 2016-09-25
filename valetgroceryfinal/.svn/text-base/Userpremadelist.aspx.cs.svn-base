@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using valetgroceryfinal.Class;
+
+namespace valetgroceryfinal
+{
+    public partial class Userpremadelist : System.Web.UI.Page
+    {
+        DbProvider dbListInfo = new DbProvider();  
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            BindAisles();
+        }
+        public void BindAisles()
+        {
+            int type = Convert.ToInt32(AppConstants.savedListTypeadmin);
+           
+            DataSet dsAislesList = new DataSet();
+            dsAislesList = dbListInfo.SelectsPremadeList(type);
+            if (dsAislesList.Tables.Count > 0)
+            {
+                if (dsAislesList != null && dsAislesList.Tables.Count > 0 && dsAislesList.Tables[0].Rows.Count > 0)
+                {
+
+                    dtlCatgory2.DataSource = dsAislesList;
+                    dtlCatgory2.DataBind();
+                }
+            }
+            dbListInfo.dispose();
+
+        }
+    }
+}

@@ -1,0 +1,528 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="price_comparison .aspx.cs" Inherits="valetgroceryfinal.price_comparison" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            height: 32px;
+        }
+        .style2
+        {
+            height: 18px;
+        }
+        </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<table cellpadding="0" cellspacing="0" style="padding-right:20px;" width="610px">
+        <tr >
+            <td class="formHeading">
+                 Price Comparison
+            </td>
+        </tr>
+        <tr>
+            <td height="10px">
+            </td>
+        </tr>
+        <tr>
+            <td class="formTextUSer" >
+                
+               Check out the price comparisons below to see that you can add convenience to your life without a lot of extra expense.
+
+            </td>
+        </tr>
+        <tr>
+            <td height="10px">
+            </td>
+        </tr>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr class="formTextUSer" height="20px" align="center">
+                    <td>
+                    </td>
+                    <td class="formHeading1">Pantry Filler
+
+                    </td>
+                    <td class="formTextUSer3" align="center" width="50px">Harris-Teeter (Hendersonville)
+
+                    </td>
+                    <td class="formTextUSer3" width="50px">Ingles (Hendersonville)
+
+                    </td>
+                </tr>
+                <%--<tr class="formTextUSer2" height="20px">
+                    <td align="left">Tide Laundry Detergent - 50 oz
+
+                    </td>
+                    <td class="formHeading1" align="right">$9.69
+
+                    </td>
+                    <td>$8.29
+
+                    </td>
+                    <td>$7.98
+
+                    </td>
+                </tr>--%>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Cottonelle Ultra Toilet Paper - 12 ct
+
+                    </td>
+                    <td class="formHeading1">$9.78
+
+                    </td>
+                    <td >$10.99
+
+                    </td>
+                    <td >$9.78
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Tombstone Supreme Pizza - 22.5 oz
+
+                    </td>
+                    <td class="formHeading1">$5.99
+
+                    </td>
+                    <td>$5.99
+
+                    </td>
+                    <td>$6.28
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Boca Original Vegan Meatless Burgers - 10 oz box
+
+                    </td>
+                    <td class="formHeading1">$3.68
+
+                    </td>
+                    <td >$3.99
+
+                    </td>
+                    <td >$3.68
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Tropicana Pure Premium Orange Juice - 64 oz
+
+                    </td>
+                    <td class="formHeading1">$4.29
+
+                    </td>
+                    <td >$4.29
+
+                    </td>
+                    <td >$3.88
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Cascadian Farms Oats and Honey Granola - 17 oz box
+
+                    </td>
+                    <td class="formHeading1">$3.89
+
+                    </td>
+                    <td>$4.79
+
+                    </td>
+                    <td>$3.83
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Quaker Oat Squares - 16 oz box
+
+                    </td>
+                    <td class="formHeading1">$4.69
+
+                    </td>
+                    <td>$4.39
+
+                    </td>
+                    <td>$4.84
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Breyers Mint Chocolate Chip Ice Cream - 1.5 qt
+
+                    </td>
+                    <td class="formHeading1">$4.98
+
+                    </td>
+                    <td>$6.29
+
+                    </td>
+                    <td>$4.98
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Kraft Ranch Salad Dressing - 16 oz.
+
+                    </td>
+                    <td class="formHeading1">$2.99
+
+                    </td>
+                    <td>$2.99
+
+                    </td>
+                    <td>$3.28
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Diet Coke - 12 pk
+
+                    </td>
+                    <td class="formHeading1">$5.69
+
+                    </td>
+                    <td>$6.19
+
+                    </td>
+                    <td>$4.98
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Amy's Organic Lentil Soup - 14.5 oz can
+
+                    </td>
+                    <td class="formHeading1">$2.59
+
+                    </td>
+                    <td>$2.59
+
+                    </td>
+                    <td>$3.23
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">McCormick Garlic Powder - 3.12 oz
+
+                    </td>
+                    <td class="formHeading1">$2.98
+
+                    </td>
+                    <td>$3.15
+
+                    </td>
+                    <td>$2.98
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Campbell's Chicken Noodle Soup - 10.75 oz can
+
+                    </td>
+                    <td class="formHeading1">$0.99
+
+                    </td>
+                    <td>$0.89
+
+                    </td>
+                    <td>$0.98
+
+                    </td>
+                </tr>
+                  <tr class="formTextUSer2" height="20px">
+                    <td align="left">Tide Laundry Detergent - 50 oz
+
+                    </td>
+                    <td class="formHeading1">$9.69
+
+                    </td>
+                    <td>$8.29
+
+                    </td>
+                    <td>$7.98
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">DiGiorno Four Cheese Pizza - 23 oz.
+
+                    </td>
+                    <td class="formHeading1">$7.39
+
+                    </td>
+                    <td>$7.39
+
+                    </td>
+                    <td>$7.38
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Progresso Light Chicken Noodle Soup - 18.5 oz can
+
+                    </td>
+                    <td class="formHeading1">$2.47
+
+                    </td>
+                    <td>$2.79
+
+                    </td>
+                    <td>$2.47
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Rice Dream Organic Rice Drink - 32 oz carton
+
+                    </td>
+                    <td class="formHeading1">$2.99
+
+                    </td>
+                    <td>$2.99
+
+                    </td>
+                    <td>$3.22
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Oscar Meyer sliced bacon - 16 oz
+
+                    </td>
+                    <td class="formHeading1">$7.19
+
+                    </td>
+                    <td>$7.49
+
+                    </td>
+                    <td>$6.48
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Bumble Bee Solid White Albacore Tuna - 12 oz
+
+                    </td>
+                    <td class="formHeading1">$4.19
+
+                    </td>
+                    <td>$3.99
+
+                    </td>
+                    <td>$3.48
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Bertolli Tomato and Basil Marinara Sauce - 24 oz jar
+
+                    </td>
+                    <td class="formHeading1">$2.88
+
+                    </td>
+                    <td>$2.95
+
+                    </td>
+                    <td>$2.88
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Hamburger Helper Chili Macaroni - 5.2 oz box
+
+                    </td>
+                    <td class="formHeading1">$2.18
+
+                    </td>
+                    <td>$1.85
+
+                    </td>
+                    <td>$2.18
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Pepperidge Farm Farmhouse Soft Oatmeal Bread - 24 oz
+
+                    </td>
+                    <td class="formHeading1">$3.99
+
+                    </td>
+                    <td>$3.99
+
+                    </td>
+                    <td>$3.99
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Jif Creamy Peanut Butter
+
+                    </td>
+                    <td class="formHeading1">$4.45
+
+                    </td>
+                    <td>$4.55
+
+                    </td>
+                    <td>$4.18
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Helman's Real Mayonnaise - 30 oz
+
+                    </td>
+                    <td class="formHeading1">$5.29
+
+                    </td>
+                    <td>$5.69
+
+                    </td>
+                    <td>$4.98
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td align="left">Double Stuff Oreos - 16.6 oz
+
+                    </td>
+                    <td class="formHeading1">$3.89
+
+                    </td>
+                    <td>$3.89
+
+                    </td>
+                    <td>$3.78
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px"> 
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td class="formTextUSer1">Sub Total
+
+                    </td>
+                    <td class="formHeading1">$109.14
+
+                    </td>
+                    <td>$112.40
+
+                    </td>
+                    <td>$105.72
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td>Delivery Fee
+
+                    </td>
+                    <td class="formHeading1">FREE
+
+                    </td>
+                    <td>No delivery
+
+                    </td>
+                    <td>No delivery
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px"> 
+                    <td class="style1">
+                    </td>
+                    <td class="style1" >(over $100)
+
+                    </td>
+                    <td class="style1">
+                    </td>
+                    <td class="style1">
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px">
+                    <td class="formTextUSer1">Grand Total
+
+                    </td>
+                    <td>$109.14
+
+                    </td>
+                    <td>$112.40
+
+                    </td>
+                    <td>$105.72
+
+                    </td>
+                </tr>
+                <tr class="formTextUSer2" height="20px" >
+                    <td colspan="3" class="formTextUSer4">Ingles and Harris-Teeter are registered trademarks. Items were shopped on 06/06/2011.  Prices reflect everyday pricing on comparable items.
+
+                    </td>
+                    <td>
+                    </td>
+                    <%--<td>
+                    </td>
+                    <td>
+                    </td>--%>
+                </tr>
+             <%--   <tr class="formTextUSer">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="formTextUSer">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>--%>
+            </table>
+        </td>
+    </tr>
+       
+        <tr>
+            <td height="260px">
+            </td>
+        </tr>
+       
+    </table>
+
+</asp:Content>

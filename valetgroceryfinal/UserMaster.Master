@@ -1,0 +1,446 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs"
+    Inherits="groceryguys.UserMaster" %>
+
+<%@ Register Src="~/cart.ascx" TagName="UserScript" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />    
+    <style type="text/css">
+        .body {
+            background-image: url(images/MainBg.JPG);
+            background-repeat: repeat-x;
+            background-color: #f1f6f0;
+        }
+    </style>
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css" />
+    <script type="text/javascript">
+        function enableFrom() {
+            var frm = 'aspnetForm';
+            var btn = 'ctl00_btnGo';
+            document.getElementById(frm).disabled = false;
+            document.getElementById(btn).disabled = false;
+        }
+
+        window.onload = enableFrom;
+    </script>
+
+    <link href="Css/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Grocery Guys</title>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap-select.css" type="text/css" media="screen" />   
+    <script type="text/javascript" src="js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="js/dhtmlwindow.css" rel="stylesheet" type="text/css" />
+    <link href="js/modal.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/dhtmlwindow.js"></script>
+    <script type="text/javascript" src="js/modal.js"> </script>
+    <link href="js/dhtmlwindow1.css" rel="stylesheet" type="text/css" />
+    <link href="js/modal1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/dhtmlwindow1.js"></script>
+    <script type="text/javascript" src="js/modal1.js"> </script>   
+    <style type="text/css">
+        #overlappopup {
+            /*don't change id name */
+            position: absolute; /*don't change position property */
+            z-index: 1000;
+            background: white;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 18px;
+            left: 0px;
+            top: 0;
+            visibility: hidden;
+        }
+
+        .style1 {
+            width: 9px;
+        }
+    </style>
+    <script type="text/javascript" src="jsNew/overlapviewer.js"> </script>    
+    <!--Newly added for project-->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+            $('.selectpicker').selectpicker();
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#divCart").click(function () {
+                window.location = "product_order.aspx";
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="MM_preloadImages('images/Tab1Btn.gif','images/Tab2Act.gif','images/Tab3Act.gif','images/Tab4Act.gif','images/Tab5Acr.gif','images/Tab6Act.gif','images/HomeTab-act.gif','images/HowItWorksTab-act.gif','images/HowItWorkstab.gif','images/MyAccountTab.gif','images/ViewCartTab.gif')">
+    <form id="form1" runat="server" style="min-height: 400px;">
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="logo">
+                                <a href="index.aspx">
+                                    <img src="images/logo.png" alt="Logo" /></a>
+                            </div>
+                        </div>
+                        <div id="Div1" runat="server" class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="cart" id="divCart" style="cursor: pointer;">
+                                        CART:
+                                    <asp:Label runat="server" ID="lblCart"></asp:Label>
+                                    </div>
+                                </div>
+                                <asp:Panel ID="pnlSignUp" runat="server">
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">New Customer?<a href="Registration.aspx"><img src="images/signup-btn.png" alt="Login" /></a></div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">Current Customer?<a href="LoginPage.aspx"><img src="images/login-btn.png" alt="Login" /></a></div>
+                                    </div>
+                                </asp:Panel>
+                                <asp:Panel runat="server" ID="pnlLogIn">
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">&nbsp;</div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="headers_btn_text">
+                                            Welcome
+                                <asp:Label runat="server" ID="lblUserName"></asp:Label><a href="UserLogOut.aspx"><img src="images/logout-btn.png" alt="Login" /></a>
+                                        </div>
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu_background">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                
+                                   <ul class="topLinks nav navbar-nav">
+                                    <li class="selected" ><a href="Index.aspx">Home</a></li>
+                                    <li><a href="Aboutcompany.aspx">About Us</a></li>
+                                    <li><a href="How.aspx">How It Works</a></li>
+                                     <li><a href="faqs.aspx">FAQs</a></li>
+                                    <li><a href="Shop.aspx">Shop Now</a></li>
+                                    <li><a href="ContactUsPage.aspx">Contact Us</a></li>
+                                    <li><a href="My_Account.aspx">My Account</a></li>
+                                </ul>                                
+                            </div>
+                        </nav>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="">
+                                    <img src="images/fb-icon.png" alt="" /></a>
+                                <a href="">
+                                    <img src="images/twitter-icon.png" alt="" /></a>
+                                <a href="">
+                                    <img src="images/linkedin-icon.png" alt="" /></a>
+                                <a href="">
+                                    <img src="images/gplus-icon.png" alt="" /></a>
+                                <div style="margin-top: 7px">
+                                    <asp:ImageButton runat="server" ID="btnGo" AlternateText="Search" ImageUrl="images/search-btn.png" OnClick="btnGo_Click" />
+                                    <input type="text" name="search" runat="server" id="txtSearch" placeholder="Enter search here..." />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 text-center">
+                            <asp:Panel ID="pnlHow" runat="server">
+                                <table cellpadding="1" cellspacing="0" border="0">
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="How.aspx" class="sideLink1">How It Works</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="faqs.aspx" class="sideLink1">FAQ</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="Aboutcompany.aspx" class="sideLink1">About the Company</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="DeliveryInfo.aspx" class="sideLink1">Delivery Information</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="gift_certificate.aspx" class="sideLink1">Gift Certificates</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="AccountFunds.aspx" class="sideLink1">Shopping Funds</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="ContactUsPage.aspx" class="sideLink1">Contact Us</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlAccount" runat="server" Visible="false">
+                                <asp:Panel ID="pnlAccNoLogin" runat="server">
+                                    <table cellpadding="1" cellspacing="0" border="0" width="150">
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="My_Account.aspx" class="sideLink1">My Account</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </asp:Panel>
+                                <asp:Panel ID="pnlAccLog" runat="server">
+                                    <table cellpadding="1" cellspacing="0" border="0" width="150">
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="My_Account.aspx" class="sideLink1">My Account</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="UpdateLoginInfo.aspx" class="sideLink1">Update Login Info</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="UpdateBillingAddress.aspx" class="sideLink1">Update Billing Info</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="UpdateDeliveryAddress.aspx" class="sideLink1">Update Delivery Info</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="UpdatePhoneInfo.aspx" class="sideLink1">Update Phone</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="viewallpast.aspx" class="sideLink1">Order History</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="MasterList.aspx" class="sideLink1">Master List</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="left" height="20" nowrap="nowrap">
+                                                <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                                <a href="UserLogout.aspx" class="sideLink1">Logout</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </asp:Panel>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlCategory" runat="server" Visible="false">
+                                <table cellpadding="10px" cellspacing="0" border="0">
+                                    <tr>
+                                        <td valign="top" align="left" height="20" nowrap="nowrap">
+                                            <img src="images/arrow4.gif" width="16" height="11" border="0" />
+                                            <a href="FeaturedProducts.aspx" class="LinkRed">New Items! </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20" nowrap="nowrap">
+                                            <img src="images/arrow4.gif" width="16" height="11" border="0" />
+                                            <a href="sales.aspx" class="LinkRed">On Sale This Week</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow4.gif" width="16" height="11" border="0" />
+                                            <a href="SuggestProduct.aspx" class="LinkRed">Suggest a Product</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <asp:DataList ID="dtlCategory" runat="server" GridLines="None" RepeatDirection="Vertical">
+                                                <HeaderTemplate>
+                                                    <table border="0" align="center" cellpadding="1" cellspacing="0">
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <tr>
+                                                        <td valign="top" style="padding-top: 3px;">
+                                                            <img src="images/arrow0.gif" width="16" height="11" border="0" />
+                                                        </td>
+                                                        <td valign="top" align="left">
+                                                            <a href='shelf.aspx?AT=<%#Eval("AisleTopID") %>' class="sideLink1">
+                                                                <asp:Label ID="lblAisleText" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"Name") %>'></asp:Label>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="3px"></td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </table>
+                                                </FooterTemplate>
+                                            </asp:DataList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="5px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20" nowrap="nowrap">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="Shop.aspx" class="sideLink1">View All Aisles</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="2px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" align="left" height="20">
+                                            <img src="images/arrow5.gif" width="16" height="11" border="0" />
+                                            <a href="SuggestProduct.aspx" class="sideLink1">Suggest a Product</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="2px">&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                        </div>
+                        <div class="col-md-10 text-center">
+                            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+                <div class="container footer">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <a href="Index.aspx">Home</a>
+                            <a href="Aboutcompany.aspx">About Us</a>
+                            <a href="How.aspx">How It Works</a>
+                            <a href="Shop.aspx">Shop Now</a>
+                            <a href="Testimonials.aspx">Testimonials</a>
+                            <a href="ContactUsPage.aspx">Contact Us</a>
+                            <br />
+                            Use of Grocery Guys and this Web site constitutes acceptance of our Terms of Use and Privacy Policy.<br />
+                            &copy; Copyright 2015 Grocery Guys, All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </form>
+    <%-- <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6378439-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>--%>
+</body>
+</html>

@@ -1,0 +1,23 @@
+D:\Richard\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.dll
+D:\Richard\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.pdb
+D:\Richard\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.dll
+D:\Richard\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.pdb
+D:\Richard\GroceryGuys\valetgroceryfinal\obj\Debug\GroceryGuys.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\Back Up\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.dll.config
+E:\Practice\GG Project\Back Up\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.dll
+E:\Practice\GG Project\Back Up\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.pdb
+E:\Practice\GG Project\Back Up\GroceryGuys\valetgroceryfinal\obj\Debug\GroceryGuys.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\Back Up\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.dll
+E:\Practice\GG Project\Back Up\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\obj\Debug\GroceryGuys.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.dll.config
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.dll
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\valetgroceryfinal.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\BAL.dll
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\DAL.dll
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\Models.dll
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\BAL.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\DAL.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\Models.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.dll
+E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.pdb

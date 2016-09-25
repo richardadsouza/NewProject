@@ -1,0 +1,9 @@
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\bin\Debug\BAL.dll
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\bin\Debug\BAL.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\bin\Debug\DAL.dll
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\bin\Debug\Models.dll
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\bin\Debug\DAL.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\bin\Debug\Models.pdb
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\obj\Debug\BAL.dll
+E:\Practice\GG Project\New Project\GroceryGuys\BAL\obj\Debug\BAL.pdb

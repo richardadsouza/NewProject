@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/valetgrocery/!svn/ver/318/trunk/valetgroceryfinal/valetgroceryfinal/Class
+END
+DBQuery.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/valetgrocery/!svn/ver/315/trunk/valetgroceryfinal/valetgroceryfinal/Class/DBQuery.cs
+END
+PasswordRestrictions.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/valetgrocery/!svn/ver/295/trunk/valetgroceryfinal/valetgroceryfinal/Class/PasswordRestrictions.cs
+END
+AppConstants.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/valetgrocery/!svn/ver/123/trunk/valetgroceryfinal/valetgroceryfinal/Class/AppConstants.cs
+END
+CSVReader.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/valetgrocery/!svn/ver/183/trunk/valetgroceryfinal/valetgroceryfinal/Class/CSVReader.cs
+END
+EmailGenerator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/valetgrocery/!svn/ver/2/trunk/valetgroceryfinal/valetgroceryfinal/Class/EmailGenerator.cs
+END
+DataValidator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/valetgrocery/!svn/ver/2/trunk/valetgroceryfinal/valetgroceryfinal/Class/DataValidator.cs
+END
+DbProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/valetgrocery/!svn/ver/315/trunk/valetgroceryfinal/valetgroceryfinal/Class/DbProvider.cs
+END
+BaseProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/valetgrocery/!svn/ver/2/trunk/valetgroceryfinal/valetgroceryfinal/Class/BaseProvider.cs
+END
+PDTHolder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/valetgrocery/!svn/ver/2/trunk/valetgroceryfinal/valetgroceryfinal/Class/PDTHolder.cs
+END
+DropdownProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/valetgrocery/!svn/ver/318/trunk/valetgroceryfinal/valetgroceryfinal/Class/DropdownProvider.cs
+END
