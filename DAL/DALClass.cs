@@ -225,11 +225,11 @@ namespace DAL
         }
 
         /// <summary>
-        /// Method to retireve first single column from the database.
+        /// Method to retrieve first single column from the database.
         /// </summary>
         /// <param name="query">Sql query to be executed.</param>
         /// <param name="sqlParam">SqlParameter</param>
-        /// <returns></returns>
+        /// <returns>Result object</returns>
         private object ExecuteScalar(StringBuilder query, SqlParameter sqlParam)
         {
             object obj = new object();
@@ -245,6 +245,32 @@ namespace DAL
             {
                 cmd = new SqlCommand(query.ToString(), con);
                 cmd.Parameters.Add(sqlParam);
+
+                obj = cmd.ExecuteScalar();
+            }
+
+            return obj;
+        }
+
+        /// <summary>
+        /// Method to retrieve first single column from the database. 
+        /// </summary>
+        /// <param name="query">Sql query to be executed</param>
+        /// <returns>result object</returns>
+        private object ExecuteScalar(StringBuilder query)
+        {
+            object obj = new object();
+
+            InitializeSqlConnection();
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            using (con)
+            {
+                cmd = new SqlCommand(query.ToString(), con);
 
                 obj = cmd.ExecuteScalar();
             }
@@ -307,7 +333,7 @@ namespace DAL
 
             try
             {
-                List<SqlParameter> sqlParams = new List<SqlParameter>() 
+                List<SqlParameter> sqlParams = new List<SqlParameter>()
                 {
                     new SqlParameter(){ ParameterName = "AisleID", SqlDbType = SqlDbType.NVarChar, Value = aisleID, Size = 10 },
                     new SqlParameter(){ ParameterName ="AisleTopID", SqlDbType = SqlDbType.NVarChar, Value = aisleTopID, Size = 10 }
@@ -585,7 +611,7 @@ namespace DAL
 
             return new DataTable();
         }
-               
+
         public bool CheckCouponCode(string couponID, string userID)
         {
             InitializeSqlConnection();
@@ -614,14 +640,14 @@ namespace DAL
             {
                 LogError(sqlEx.Message, sqlEx.StackTrace);
 
-                return false;               
+                return false;
             }
             catch (Exception ex)
             {
                 LogError(ex.Message, ex.StackTrace);
 
                 return false;
-            }           
+            }
         }
 
         public bool CheckOrder(string userID)
@@ -659,6 +685,159 @@ namespace DAL
                 return true;
             }
         }
+
+        /// <summary>
+        /// Function to check if the save list name is unique or not for the user
+        /// </summary>
+        /// <param name="saveListName">Name of the save list</param>
+        /// <param name="userID">User ID of the user</param>
+        /// <returns>Returns true if the save list is unique for the user</returns>
+        public bool CheckSaveListName(string saveListName, string userID)
+        {
+            bool isUnique = false;
+
+            try
+            {
+                InitializeSqlConnection();
+
+                using (con)
+                {
+                    query.Clear();
+                    query.Append("SELECT * FROM ShoppingList WHERE UserID = @UserID AND Name = @Name");
+
+                    List<SqlParameter> sqlParams = new List<SqlParameter>()
+                    {
+                        new SqlParameter { ParameterName = "UserID", SqlDbType = SqlDbType.NVarChar, Size = 25, Value = userID },
+                        new SqlParameter { ParameterName = "Name", SqlDbType = SqlDbType.NVarChar, Size = 50, Value = saveListName }
+                    };
+
+                    DataTable dt = ExecuteQuery(query, sqlParams);
+
+                    if (dt != null && dt.Rows.Count == 0)
+                    {
+                        isUnique = true;
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                LogError(sqlEx.Message, sqlEx.StackTrace);
+                isUnique = false;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex.Message, ex.StackTrace);
+                isUnique = false;
+            }
+
+            return isUnique;
+        }
+
+        public string CreateSaveList(string saveListName, string userID)
+        {
+            string saveList = String.Empty;
+
+            try
+            {
+                saveList = GetSaveListID();
+
+                if (saveList.Length > 0)
+                {
+                    query.Clear();
+
+                    //TODO: Create sql transction to save shopping list and its items in the database.
+                    
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                LogError(sqlEx.Message, sqlEx.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex.Message, ex.StackTrace);
+            }
+
+            return saveList;        
+        }
+
+        public string CreateID(string prefix, string id)
+        {
+            if (String.IsNullOrWhiteSpace(prefix) && String.IsNullOrWhiteSpace(id))
+            {
+                string idSubString = id.Substring(2, id.Length - 3);
+                int returnID = 0;
+
+                switch (prefix)
+                {
+                    case "SLT":
+                        returnID = Convert.ToInt32(idSubString);
+                        returnID++;
+
+                        id = "";
+
+                        id = GetFormattedID(returnID, prefix);
+                        break;
+                }
+            }
+
+            return id;
+        }
+
+        private string GetFormattedID(int id, string prefix)
+        {
+            if (id >= 1 && id <= 9)
+            {
+                return prefix + "000" + id;
+            }
+            else if (id >= 10 && id <= 99)
+            {
+                return prefix + "00" + id;
+            }
+            else if (id >= 100 && id <= 999)
+            {
+                return prefix + "0" + id;
+            }
+            else
+            {
+                return prefix + id;
+            }
+        }
+
+        public string GetSaveListID()
+        {
+            string saveListID = String.Empty;
+
+            try
+            {
+                InitializeSqlConnection();
+
+                query.Clear();
+                query.Append("SELECT TOP(1) ListID FROM ShoppingList ORDER BY ListID DESC");
+
+                var obj = ExecuteScalar(query);
+
+                if (obj != null)
+                {
+                    saveListID = CreateID("SLT", Convert.ToString(obj));
+                }
+                else
+                {
+                    saveListID = "SLT0001";
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                LogError(sqlEx.Message, sqlEx.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex.Message, ex.StackTrace);
+            }
+
+            return saveListID;
+        }
+
         #endregion
     }
 }

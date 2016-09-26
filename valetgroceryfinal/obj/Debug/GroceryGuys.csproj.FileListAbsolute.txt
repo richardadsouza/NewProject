@@ -21,3 +21,6 @@ E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\DAL.pdb
 E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\bin\Models.pdb
 E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.dll
 E:\Practice\GG Project\New Project\GroceryGuys\valetgroceryfinal\obj\Debug\valetgroceryfinal.pdb
+E:\Practice\GG Project\GitHub\NewProject\valetgroceryfinal\obj\Debug\GroceryGuys.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\GitHub\NewProject\valetgroceryfinal\obj\Debug\valetgroceryfinal.dll
+E:\Practice\GG Project\GitHub\NewProject\valetgroceryfinal\obj\Debug\valetgroceryfinal.pdb

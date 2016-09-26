@@ -4,3 +4,9 @@ E:\Practice\GG Project\New Project\GroceryGuys\DAL\bin\Debug\DAL.pdb
 E:\Practice\GG Project\New Project\GroceryGuys\DAL\obj\Debug\DAL.dll
 E:\Practice\GG Project\New Project\GroceryGuys\DAL\obj\Debug\DAL.pdb
 E:\Practice\GG Project\New Project\GroceryGuys\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\GitHub\NewProject\DAL\bin\Debug\DAL.dll.config
+E:\Practice\GG Project\GitHub\NewProject\DAL\bin\Debug\DAL.dll
+E:\Practice\GG Project\GitHub\NewProject\DAL\bin\Debug\DAL.pdb
+E:\Practice\GG Project\GitHub\NewProject\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Practice\GG Project\GitHub\NewProject\DAL\obj\Debug\DAL.dll
+E:\Practice\GG Project\GitHub\NewProject\DAL\obj\Debug\DAL.pdb

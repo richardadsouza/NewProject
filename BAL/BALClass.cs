@@ -526,5 +526,15 @@ namespace BAL
                 return new Coupon();
             }
         }
+
+        public bool CheckSaveListName(string saveListName, string userID)
+        {
+            return objDAL.CheckSaveListName(saveListName, userID);
+        }
+
+        public string CreateSaveList(string saveListName, string userID)
+        {
+            return objDAL.CreateSaveList(saveListName, userID);
+        }
     }
 }
